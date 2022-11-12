@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap');
+* {
+    font-family: 'Mulish', sans-serif;
+}
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+companyimg {
+  width:10px
+}
+
+.home-bg {
+    background-image: url('../images/homebg.png');
+    background-repeat: no-repeat;
+    background-size: contain 100%;
+    background-position: right;
+    height: 60vh;
+}
+
+.nothing {
+    border: 0;
+    outline: none;
+    background: white;
+}

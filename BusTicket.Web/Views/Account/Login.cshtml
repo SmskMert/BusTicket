@@ -1,0 +1,46 @@
+﻿@model LoginModel
+
+<div class="display-6 text-primary ms-2">
+    Login
+</div>
+<hr>
+
+<form asp-controller="Account" asp-action="Login" method="post">
+    <input type="hidden" asp-for="ReturnUrl" value=@ViewBag.ReturnUrl />
+<div class="row mt-4">
+        <div class="col-md-6">
+            <div class="row mb-2">
+                <div class="col-md-3">
+                    <label class="col-form-label" asp-for="UserName"></label>
+                </div>
+                <div class="col-md-9">
+                    <input class="form-control" asp-for="UserName" />
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-md-3">
+                    <label class="col-form-label" asp-for="Password"></label>
+                </div>
+                <div class="col-md-9">
+                    <input class="form-control" asp-for="Password" />
+                </div>
+            </div>
+            <strong><div asp-validation-summary="All" class="text-danger offset-3 col"></div></strong>
+            <div class="row mt-0">
+                <div class="offset-3 col-7 d-flex align-items-center">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" asp-for="IsPersistent">
+                        <label class="form-check-label" asp-for="IsPersistent">
+                        </label>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <button class="btn btn-primary btn-md" type="submit">Login</button>
+                </div>
+            </div>
+            
+        </div>
+        <div class="col-md-6">
+        </div>
+</div>
+</form>

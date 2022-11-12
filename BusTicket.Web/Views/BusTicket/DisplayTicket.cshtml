@@ -1,0 +1,107 @@
+﻿@model DisplayTicketModel
+
+<div class="display-6 text-primary ms-2 text-center">
+    Bus Ticket
+</div>
+<hr>
+<div class="card m-3">
+  <div class="row g-0">
+    <div class="offset-1 col-5">
+      <div class="card-body">
+        <h5 class="card-title"><strong>Trip Details</strong></h5>
+        <div class="row">
+             <div class="col-4 border">
+                <p class="card-text"><Strong>Pnr No</Strong></p>
+            </div>
+            <div class="col-7 border">
+                <p class="card-text">Random PNR Method to be written</p>
+            </div>
+
+            <div class="col-4 border">
+                <p class="card-text"><Strong>Bus</Strong></p>
+            </div>
+            <div class="col-7 border">
+                <p class="card-text">@Model.Ticket.Trip.MidLine.Line.StartingPoint - @Model.Ticket.Trip.MidLine.Line.Destination</p>
+            </div>
+
+            <div class="col-4 border">
+                <p class="card-text"><Strong>Date</Strong></p>
+            </div>
+            <div class="col-7 border">
+                <p class="card-text">@Model.Ticket.Trip.ScheduleDate </p>
+            </div>
+
+            <div class="col-4 border">
+                <p class="card-text"><Strong>Departure From</Strong></p>
+            </div>
+            <div class="col-7 border">
+                <p class="card-text">@Model.Ticket.Trip.MidLine.StartingPoint , @Model.Ticket.Trip.DepartureTime</p>
+            </div>
+
+            <div class="col-4 border">
+                <p class="card-text"><Strong>Arrive To</Strong></p>
+            </div>
+            <div class="col-7 border">
+                <p class="card-text">@Model.Ticket.Trip.MidLine.Destination , @Model.Ticket.Trip.ArrivalTime</p>
+            </div>
+
+            <div class="col-4 border">
+                <p class="card-text"><Strong>Seat No</Strong></p>
+            </div>
+            <div class="col-7 border">
+                <p class="card-text">@Model.SelectedSeatNo</p>
+            </div>
+        </div>
+      </div>
+      </div>
+
+    <div class="col-5">
+      <div class="card-body">
+        <h5 class="card-title"><strong>Customer Details</strong></h5>
+        <div class="row">
+            <div class="col-4 border">
+                <p class="card-text"><Strong>Customer Id</Strong></p>
+            </div>
+            <div class="col-8 border">
+                <p class="card-text">@Model.Customer.Id</p>
+            </div>
+
+            <div class="col-4 border">
+                <p class="card-text"><Strong>First Name</Strong></p>
+            </div>
+            <div class="col-8 border">
+                <p class="card-text">@Model.Customer.FName</p>
+            </div>
+
+            <div class="col-4 border">
+                <p class="card-text"><Strong>Last Name</Strong></p>
+            </div>
+            <div class="col-8 border">
+                <p class="card-text">@Model.Customer.LName</p>
+            </div>
+
+            <div class="col-4 border">
+                <p class="card-text"><Strong>Phone Number</Strong></p>
+            </div>
+            <div class="col-8 border">
+                <p class="card-text">@Model.Customer.Contact</p>
+            </div>
+
+            <div class="col-4 border">
+                <p class="card-text"><Strong>Email</Strong></p>
+            </div>
+            <div class="col-8 border">
+                <p class="card-text">@Model.Customer.Email</p>
+            </div>
+
+           
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row me-4">
+    <div class="col text-end">
+        <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Return Home Page</a>
+    </div>
+</div>

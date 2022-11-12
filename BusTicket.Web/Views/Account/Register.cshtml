@@ -1,0 +1,82 @@
+﻿@model RegisterModel
+
+<div class="display-6 text-primary ms-2 text-center">
+    Register
+</div>
+<hr>
+
+<form asp-controller="Account" asp-action="Register" method="post">
+<div class="row mt-4">
+        <div class="col-md-6">
+            <div class="row mb-2">
+                <div class="col-md-3">
+                    <label class="col-form-label" asp-for="FirstName"></label>
+                </div>
+                <div class="col-md-9">
+                    <input class="form-control" asp-for="FirstName" />
+                </div>
+                    <strong><span asp-validation-for="FirstName" class="text-danger offset-3 col ps-2"></span></strong>
+            </div>
+        <div class="row mb-2">
+                <div class="col-md-3">
+                    <label class="col-form-label" asp-for="LastName"></label>
+                </div>
+                <div class="col-md-9">
+                    <input class="form-control" asp-for="LastName" />
+                </div>
+                    <strong><span asp-validation-for="LastName" class="text-danger offset-3 col ps-2"></span></strong>
+
+                </div>
+
+            <div class="row mb-2">
+                <div class="col-md-3">
+                    <label class="col-form-label" asp-for="UserName"></label>
+                </div>
+                <div class="col-md-9">
+                    <input class="form-control" asp-for="UserName" />
+                </div>
+                    <strong><span asp-validation-for="UserName" class="text-danger offset-3 col ps-2"></span></strong>
+                </div>
+
+            
+        </div>
+        <div class="col-md-6">
+                <div class="row mb-2">
+                    <div class="col-md-3">
+                        <label class="col-form-label" asp-for="Email"></label>
+                    </div>
+                    <div class="col-md-9">
+                        <input class="form-control" asp-for="Email" />
+                    </div>
+                    <strong><span asp-validation-for="Email" class="text-danger offset-3 col ps-2"></span></strong>
+                </div>
+
+                <div class="row mb-2">
+                    <div class="col-md-3">
+                        <label class="col-form-label" asp-for="Password"></label>
+                    </div>
+                    <div class="col-md-9">
+                        <input class="form-control" asp-for="Password" />
+                    </div>
+                    <strong><span asp-validation-for="Password" class="text-danger offset-3 col ps-2"></span></strong>
+                </div>
+
+                <div class="row mb-2">
+                    <div class="col-md-3">
+                        <label class="col-form-label" asp-for="RePassword"></label>
+                    </div>
+                    <div class="col-md-9">
+                        <input class="form-control" asp-for="RePassword" />
+                    </div>
+                    <strong><span asp-validation-for="RePassword" class="text-danger offset-3 col ps-2"></span></strong>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-10"></div>
+                    <div class="col-2">
+                        <button class="btn btn-primary btn-md" type="submit">Register</button>
+                    </div>
+                </div>
+
+        </div>
+</div>
+</form>

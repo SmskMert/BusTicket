@@ -1,0 +1,332 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\BusTicket\\BusTicket.Web\\BusTicket.Web.csproj": {}
+  },
+  "projects": {
+    "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\BusTicket\\BusTicket.Business\\BusTicket.Business.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\BusTicket\\BusTicket.Business\\BusTicket.Business.csproj",
+        "projectName": "BusTicket.Business",
+        "projectPath": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\BusTicket\\BusTicket.Business\\BusTicket.Business.csproj",
+        "packagesPath": "C:\\Users\\Mert\\.nuget\\packages\\",
+        "outputPath": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\BusTicket\\BusTicket.Business\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Mert\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\BusTicket\\BusTicket.Data\\BusTicket.Data.csproj": {
+                "projectPath": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\BusTicket\\BusTicket.Data\\BusTicket.Data.csproj"
+              },
+              "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\BusTicket\\BusTicket.Entity\\BusTicket.Entity.csproj": {
+                "projectPath": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\BusTicket\\BusTicket.Entity\\BusTicket.Entity.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\BusTicket\\BusTicket.Core\\BusTicket.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\BusTicket\\BusTicket.Core\\BusTicket.Core.csproj",
+        "projectName": "BusTicket.Core",
+        "projectPath": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\BusTicket\\BusTicket.Core\\BusTicket.Core.csproj",
+        "packagesPath": "C:\\Users\\Mert\\.nuget\\packages\\",
+        "outputPath": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\BusTicket\\BusTicket.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Mert\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\BusTicket\\BusTicket.Data\\BusTicket.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\BusTicket\\BusTicket.Data\\BusTicket.Data.csproj",
+        "projectName": "BusTicket.Data",
+        "projectPath": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\BusTicket\\BusTicket.Data\\BusTicket.Data.csproj",
+        "packagesPath": "C:\\Users\\Mert\\.nuget\\packages\\",
+        "outputPath": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\BusTicket\\BusTicket.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Mert\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\BusTicket\\BusTicket.Entity\\BusTicket.Entity.csproj": {
+                "projectPath": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\BusTicket\\BusTicket.Entity\\BusTicket.Entity.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\BusTicket\\BusTicket.Entity\\BusTicket.Entity.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\BusTicket\\BusTicket.Entity\\BusTicket.Entity.csproj",
+        "projectName": "BusTicket.Entity",
+        "projectPath": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\BusTicket\\BusTicket.Entity\\BusTicket.Entity.csproj",
+        "packagesPath": "C:\\Users\\Mert\\.nuget\\packages\\",
+        "outputPath": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\BusTicket\\BusTicket.Entity\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Mert\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\BusTicket\\BusTicket.Web\\BusTicket.Web.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\BusTicket\\BusTicket.Web\\BusTicket.Web.csproj",
+        "projectName": "BusTicket.Web",
+        "projectPath": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\BusTicket\\BusTicket.Web\\BusTicket.Web.csproj",
+        "packagesPath": "C:\\Users\\Mert\\.nuget\\packages\\",
+        "outputPath": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\BusTicket\\BusTicket.Web\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Mert\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\BusTicket\\BusTicket.Business\\BusTicket.Business.csproj": {
+                "projectPath": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\BusTicket\\BusTicket.Business\\BusTicket.Business.csproj"
+              },
+              "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\BusTicket\\BusTicket.Core\\BusTicket.Core.csproj": {
+                "projectPath": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\BusTicket\\BusTicket.Core\\BusTicket.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

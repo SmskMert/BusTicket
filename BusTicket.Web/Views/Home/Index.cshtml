@@ -1,0 +1,79 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model TripSearchModel
+
+ <div class="home-bg">
+    <div class="row">
+        <div class="col-md-8">
+            <h1 class="display-3 mt-5 mb-3">Find cheap bus tickets in Turkey</h1>
+        </div>
+    </div>
+
+   <div class="row">
+        <div class="col-md-8">
+            <h6 class="display-6 fs-4">Easily compare and book your next trip with BusTicket</h6>
+         </div>
+    </div>
+
+<form asp-controller="Home" asp-action="Index" method="post">
+     <div class="row">
+        <div class="col-md-3 p-0">
+            <div class="input-group mt-5">
+                <label class="input-group-text" for="inputGroupSelect01">ORIGIN</label>
+                    <input asp-for="Origin" type="text" class="form-control" placeholder="From..">
+               @* <select class="form-select" id="inputGroupSelect01">
+                     <option selected>Leaving From..</option>
+                     <option value="1">Istanbul</option>
+                     <option value="2">Ankara</option>
+                     <option value="3">Trabzon</option>
+                </select>*@
+            </div>
+            <strong><span asp-validation-for="Origin" class="text-danger ms-1"></span></strong>
+        </div>
+
+         <div class="col-md-3 ps-3 pe-0">
+            <div class="input-group mt-5">
+                <label class="input-group-text" for="inputGroupSelect02">DESTINATION</label>
+                    <input asp-for="Destination" type="text" class="form-control" placeholder="To..">
+            </div>
+                @*<select class="form-select" id="inputGroupSelect02">
+                     <option selected>Going To..</option>
+                     <option value="1">Istanbul</option>
+                     <option value="2">Ankara</option>
+                     <option value="3">Trabzon</option>
+                </select>*@
+         <strong><span asp-validation-for="Destination" class="text-danger ms-1"></span></strong>
+         </div>
+     </div>
+        @*   <div class="col-md-3 p-0">
+            <div class="input-group mt-5">
+                <label class="input-group-text" for="inputGroupSelect02">PASSANGERS</label>
+                <select class="form-select" id="inputGroupSelect02">
+                     <option selected>Choose..</option>
+                     <option value="1">1</option>
+                     <option value="2">2</option>
+                     <option value="3">3</option>
+                </select>
+            </div>
+        </div>*@
+
+    <div class="row">
+        <div class="col-md-3 p-0">
+            <div class="input-group mt-5">
+                <span class="input-group-text" id="basic-addon1">DATE</span>
+                <input type="date" asp-for="Date" class="form-control" aria-describedby="basic-addon1">
+            </div>
+            <strong><span asp-validation-for="Date" class="text-danger ms-1"></span></strong>
+        </div>
+
+        <div class="col-md-3">
+            <button type="submit" class="btn btn-sm btn-outline-secondary mt-5 fs-5">Search</button>
+        </div>
+    </div>
+
+    
+
+</form>
+ </div>

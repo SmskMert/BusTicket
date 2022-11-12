@@ -1,0 +1,40 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model IQueryable<IdentityRole>
+<div class="d-flex justify-content-between align-items-center">
+    <div class="display-6 text-primary ms-2 text-center">
+        Role List
+    </div>
+    <div>
+        <a asp-controller="Admin" asp-action="CreateRole" class="btn btn-primary">Create Role</a>
+        <a asp-controller="Admin" asp-action="UserList" class="btn btn-warning">Change Users in Role</a>
+    </div>
+</div>
+<hr>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Role Name</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var role in Model)
+        {
+            <tr>
+                <td>@role.Id</td>
+                <td>@role.Name</td>
+                <td>
+                    <div>
+                        <a class="btn btn-outline-warning" asp-controller="Admin" asp-action="RoleList">Update</a>
+                        <btn type="button" class="btn btn-outline-danger">Delete</btn>
+
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

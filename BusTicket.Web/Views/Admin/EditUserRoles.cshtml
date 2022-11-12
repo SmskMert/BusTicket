@@ -1,0 +1,40 @@
+﻿@model EditUserRolesModel
+
+<div class="d-flex justify-content-between align-items-center">
+    <div class="display-6 text-primary ms-2 text-center">
+        Edit User <strong>@Model.UserName</strong>'s Roles
+    </div>
+    <div>
+        <a asp-controller="Admin" asp-action="UserList" class="btn btn-primary">Go Back To User List</a>
+    </div>
+</div>
+<hr />
+<form asp-controller="Admin" asp-action="EditUserRoles" method="post">
+    <input type="hidden" asp-for="UserId" value=@Model.UserId />
+    <h5 class="my-3">To Edit User Roles, Please Update the role selection below.</h5>
+    <div class="row">
+        <div class="col-md-4">
+            @foreach (var role in ViewBag.Roles)
+            {
+                var checkedOrNot = "";
+                    foreach (var userRole in Model.UserRoles)
+                    {
+                        checkedOrNot = role.ToString() == userRole ? "checked" : "";
+                        if (checkedOrNot == "checked") break;
+                    }
+                <div class="input-group mb-3">
+                    <div class="input-group-text">
+                        <input class="form-check-input mt-0" name="SelectedRoles" type="checkbox" value=@role @checkedOrNot>
+                    </div>
+                    <input type="text" value=@role class="form-control" disabled>
+                </div>
+            }
+            <strong><span asp-validation-for="SelectedRoles" class="text-danger"></span></strong>
+            <div class="mt-4 text-end">
+                <button type="submit" class="btn btn-primary">Update Roles</button>
+            </div>
+        </div>
+        <div class="col-md-8"></div>
+
+    </div>
+</form>
