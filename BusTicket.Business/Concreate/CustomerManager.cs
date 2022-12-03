@@ -39,9 +39,14 @@ namespace BusTicket.Business.Concreate
             return await _customerRepository.GetByIdAsync(id);
         }
 
+        public async Task<Customer> GetCustomerByUserNameAsync(string userName)
+        {
+            return await _customerRepository.GetCustomerByUserNameAsync(userName);
+        }
+
         public async Task UpdateAsync(Customer customer)
         {
-            _customerRepository.UpdateAsync(customer);
+           await _customerRepository.UpdateAsync(customer);
         }
     }
 }

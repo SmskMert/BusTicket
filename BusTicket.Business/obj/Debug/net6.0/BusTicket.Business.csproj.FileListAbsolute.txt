@@ -1,34 +1,17 @@
-D:\05.Software Development\04.BAU-BRIGHT\02.ClonedRepo\MertSimsek_Odevler\_BusTicket\BusTicket.Business\bin\Debug\net6.0\BusTicket.Business.deps.json
-D:\05.Software Development\04.BAU-BRIGHT\02.ClonedRepo\MertSimsek_Odevler\_BusTicket\BusTicket.Business\bin\Debug\net6.0\BusTicket.Business.dll
-D:\05.Software Development\04.BAU-BRIGHT\02.ClonedRepo\MertSimsek_Odevler\_BusTicket\BusTicket.Business\bin\Debug\net6.0\BusTicket.Business.pdb
-D:\05.Software Development\04.BAU-BRIGHT\02.ClonedRepo\MertSimsek_Odevler\_BusTicket\BusTicket.Business\bin\Debug\net6.0\BusTicket.Data.dll
-D:\05.Software Development\04.BAU-BRIGHT\02.ClonedRepo\MertSimsek_Odevler\_BusTicket\BusTicket.Business\bin\Debug\net6.0\BusTicket.Entity.dll
-D:\05.Software Development\04.BAU-BRIGHT\02.ClonedRepo\MertSimsek_Odevler\_BusTicket\BusTicket.Business\bin\Debug\net6.0\BusTicket.Data.pdb
-D:\05.Software Development\04.BAU-BRIGHT\02.ClonedRepo\MertSimsek_Odevler\_BusTicket\BusTicket.Business\bin\Debug\net6.0\BusTicket.Entity.pdb
-D:\05.Software Development\04.BAU-BRIGHT\02.ClonedRepo\MertSimsek_Odevler\_BusTicket\BusTicket.Business\obj\Debug\net6.0\BusTicket.Business.csproj.AssemblyReference.cache
-D:\05.Software Development\04.BAU-BRIGHT\02.ClonedRepo\MertSimsek_Odevler\_BusTicket\BusTicket.Business\obj\Debug\net6.0\BusTicket.Business.GeneratedMSBuildEditorConfig.editorconfig
-D:\05.Software Development\04.BAU-BRIGHT\02.ClonedRepo\MertSimsek_Odevler\_BusTicket\BusTicket.Business\obj\Debug\net6.0\BusTicket.Business.AssemblyInfoInputs.cache
-D:\05.Software Development\04.BAU-BRIGHT\02.ClonedRepo\MertSimsek_Odevler\_BusTicket\BusTicket.Business\obj\Debug\net6.0\BusTicket.Business.AssemblyInfo.cs
-D:\05.Software Development\04.BAU-BRIGHT\02.ClonedRepo\MertSimsek_Odevler\_BusTicket\BusTicket.Business\obj\Debug\net6.0\BusTicket.Business.csproj.CoreCompileInputs.cache
-D:\05.Software Development\04.BAU-BRIGHT\02.ClonedRepo\MertSimsek_Odevler\_BusTicket\BusTicket.Business\obj\Debug\net6.0\BusTicket.Business.csproj.CopyComplete
-D:\05.Software Development\04.BAU-BRIGHT\02.ClonedRepo\MertSimsek_Odevler\_BusTicket\BusTicket.Business\obj\Debug\net6.0\BusTicket.Business.dll
-D:\05.Software Development\04.BAU-BRIGHT\02.ClonedRepo\MertSimsek_Odevler\_BusTicket\BusTicket.Business\obj\Debug\net6.0\refint\BusTicket.Business.dll
-D:\05.Software Development\04.BAU-BRIGHT\02.ClonedRepo\MertSimsek_Odevler\_BusTicket\BusTicket.Business\obj\Debug\net6.0\BusTicket.Business.pdb
-D:\05.Software Development\04.BAU-BRIGHT\02.ClonedRepo\MertSimsek_Odevler\_BusTicket\BusTicket.Business\obj\Debug\net6.0\ref\BusTicket.Business.dll
-D:\05.Software Development\04.BAU-BRIGHT\02.ClonedRepo\BusTicket\BusTicket.Business\bin\Debug\net6.0\BusTicket.Business.deps.json
-D:\05.Software Development\04.BAU-BRIGHT\02.ClonedRepo\BusTicket\BusTicket.Business\bin\Debug\net6.0\BusTicket.Business.dll
-D:\05.Software Development\04.BAU-BRIGHT\02.ClonedRepo\BusTicket\BusTicket.Business\bin\Debug\net6.0\BusTicket.Business.pdb
-D:\05.Software Development\04.BAU-BRIGHT\02.ClonedRepo\BusTicket\BusTicket.Business\bin\Debug\net6.0\BusTicket.Data.dll
-D:\05.Software Development\04.BAU-BRIGHT\02.ClonedRepo\BusTicket\BusTicket.Business\bin\Debug\net6.0\BusTicket.Entity.dll
-D:\05.Software Development\04.BAU-BRIGHT\02.ClonedRepo\BusTicket\BusTicket.Business\bin\Debug\net6.0\BusTicket.Data.pdb
-D:\05.Software Development\04.BAU-BRIGHT\02.ClonedRepo\BusTicket\BusTicket.Business\bin\Debug\net6.0\BusTicket.Entity.pdb
-D:\05.Software Development\04.BAU-BRIGHT\02.ClonedRepo\BusTicket\BusTicket.Business\obj\Debug\net6.0\BusTicket.Business.csproj.AssemblyReference.cache
-D:\05.Software Development\04.BAU-BRIGHT\02.ClonedRepo\BusTicket\BusTicket.Business\obj\Debug\net6.0\BusTicket.Business.GeneratedMSBuildEditorConfig.editorconfig
-D:\05.Software Development\04.BAU-BRIGHT\02.ClonedRepo\BusTicket\BusTicket.Business\obj\Debug\net6.0\BusTicket.Business.AssemblyInfoInputs.cache
-D:\05.Software Development\04.BAU-BRIGHT\02.ClonedRepo\BusTicket\BusTicket.Business\obj\Debug\net6.0\BusTicket.Business.AssemblyInfo.cs
-D:\05.Software Development\04.BAU-BRIGHT\02.ClonedRepo\BusTicket\BusTicket.Business\obj\Debug\net6.0\BusTicket.Business.csproj.CoreCompileInputs.cache
-D:\05.Software Development\04.BAU-BRIGHT\02.ClonedRepo\BusTicket\BusTicket.Business\obj\Debug\net6.0\BusTicket.Business.csproj.CopyComplete
-D:\05.Software Development\04.BAU-BRIGHT\02.ClonedRepo\BusTicket\BusTicket.Business\obj\Debug\net6.0\BusTicket.Business.dll
-D:\05.Software Development\04.BAU-BRIGHT\02.ClonedRepo\BusTicket\BusTicket.Business\obj\Debug\net6.0\refint\BusTicket.Business.dll
-D:\05.Software Development\04.BAU-BRIGHT\02.ClonedRepo\BusTicket\BusTicket.Business\obj\Debug\net6.0\BusTicket.Business.pdb
-D:\05.Software Development\04.BAU-BRIGHT\02.ClonedRepo\BusTicket\BusTicket.Business\obj\Debug\net6.0\ref\BusTicket.Business.dll
+C:\Users\ÖĞLE\source\repos\MertSimsek_Odevler\_BusTicket\BusTicket.Business\bin\Debug\net6.0\BusTicket.Business.deps.json
+C:\Users\ÖĞLE\source\repos\MertSimsek_Odevler\_BusTicket\BusTicket.Business\bin\Debug\net6.0\BusTicket.Business.dll
+C:\Users\ÖĞLE\source\repos\MertSimsek_Odevler\_BusTicket\BusTicket.Business\bin\Debug\net6.0\BusTicket.Business.pdb
+C:\Users\ÖĞLE\source\repos\MertSimsek_Odevler\_BusTicket\BusTicket.Business\bin\Debug\net6.0\BusTicket.Data.dll
+C:\Users\ÖĞLE\source\repos\MertSimsek_Odevler\_BusTicket\BusTicket.Business\bin\Debug\net6.0\BusTicket.Entity.dll
+C:\Users\ÖĞLE\source\repos\MertSimsek_Odevler\_BusTicket\BusTicket.Business\bin\Debug\net6.0\BusTicket.Data.pdb
+C:\Users\ÖĞLE\source\repos\MertSimsek_Odevler\_BusTicket\BusTicket.Business\bin\Debug\net6.0\BusTicket.Entity.pdb
+C:\Users\ÖĞLE\source\repos\MertSimsek_Odevler\_BusTicket\BusTicket.Business\obj\Debug\net6.0\BusTicket.Business.csproj.AssemblyReference.cache
+C:\Users\ÖĞLE\source\repos\MertSimsek_Odevler\_BusTicket\BusTicket.Business\obj\Debug\net6.0\BusTicket.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ÖĞLE\source\repos\MertSimsek_Odevler\_BusTicket\BusTicket.Business\obj\Debug\net6.0\BusTicket.Business.AssemblyInfoInputs.cache
+C:\Users\ÖĞLE\source\repos\MertSimsek_Odevler\_BusTicket\BusTicket.Business\obj\Debug\net6.0\BusTicket.Business.AssemblyInfo.cs
+C:\Users\ÖĞLE\source\repos\MertSimsek_Odevler\_BusTicket\BusTicket.Business\obj\Debug\net6.0\BusTicket.Business.csproj.CoreCompileInputs.cache
+C:\Users\ÖĞLE\source\repos\MertSimsek_Odevler\_BusTicket\BusTicket.Business\obj\Debug\net6.0\BusTicket.Business.csproj.CopyComplete
+C:\Users\ÖĞLE\source\repos\MertSimsek_Odevler\_BusTicket\BusTicket.Business\obj\Debug\net6.0\BusTicket.Business.dll
+C:\Users\ÖĞLE\source\repos\MertSimsek_Odevler\_BusTicket\BusTicket.Business\obj\Debug\net6.0\refint\BusTicket.Business.dll
+C:\Users\ÖĞLE\source\repos\MertSimsek_Odevler\_BusTicket\BusTicket.Business\obj\Debug\net6.0\BusTicket.Business.pdb
+C:\Users\ÖĞLE\source\repos\MertSimsek_Odevler\_BusTicket\BusTicket.Business\obj\Debug\net6.0\ref\BusTicket.Business.dll

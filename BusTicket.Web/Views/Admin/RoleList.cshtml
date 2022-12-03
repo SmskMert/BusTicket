@@ -27,9 +27,39 @@
                 <td>@role.Name</td>
                 <td>
                     <div>
-                        <a class="btn btn-outline-warning" asp-controller="Admin" asp-action="RoleList">Update</a>
-                        <btn type="button" class="btn btn-outline-danger">Delete</btn>
+                        <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#roleUpdateModal-@role.Name" data-bs-whatever="roleUpdateModal">Update</button>
 
+                        <div class="modal fade" id="roleUpdateModal-@role.Name" tabindex="-1" aria-labelledby="roleUpdateModal" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="roleUpdateModalLabel-@role.Name">Update Role <strong>@role.Name</strong></h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <form asp-controller="Admin" asp-action="UpdateRole" method="post">
+                                        <div class="modal-body">
+                                            <div class="mb-3">
+                                                <label for="recipient-name" class="col-form-label">Id:</label>
+                                                <input readonly value=@role.Id name="id" type="text" class="form-control" id="recipient-name">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="message-text" class="col-form-label">Role Name:</label>
+                                                <input value=@role.Name type="text" name="name" class="form-control" id="recipient-name">
+
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-warning">Update</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <a asp-controller="Admin" asp-action="DeleteRole" asp-route-id=@role.Id type="button" class="btn btn-outline-danger">Delete</a>
                     </div>
                 </td>
             </tr>

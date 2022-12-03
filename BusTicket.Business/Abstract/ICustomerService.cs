@@ -18,5 +18,6 @@ namespace BusTicket.Business.Abstract
         Task UpdateAsync(Customer customer);
 
         Task DeleteAsync(Customer customer);
+        Task<Customer> GetCustomerByUserNameAsync(string userName);
     }
 }

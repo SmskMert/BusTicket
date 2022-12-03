@@ -1,5 +1,9 @@
 ﻿@model SeatSelectionModel
 
+@section FontAwesomeCDN{
+    @await Html.PartialAsync("_FontAwesomeCDNPartial")
+}
+
 <div class="display-6 text-primary ms-2 text-center">
     Seat Selection
 </div>
@@ -9,9 +13,9 @@
     <div class="col-7" >
         <ul class="list-group">
         <li class="list-group-item active"><strong>SELECT A SEAT</strong></li>
-        <li class="list-group-item"> <div class="row gy-5"> 
-            <div class="offset-1 col-11">Driver</div>
-            @for (var i = 1; i <= @Model.Trip.TripDetail.Bus.Capacity ; i++)
+        <li class="list-group-item pb-4"> <div class="row gy-5"> 
+            <div class="offset-1 col-2 text-center"><img src="~/images/steeringWheel.png"/></div><div class="col-9"></div>
+            @for (var i = 1; i <= @Model.Trips[0].TripDetail.Bus.Capacity ; i++)
         {   
             string bgColor = "bg-light";
             @if (i==1 || i % 4 == 1)
@@ -31,8 +35,8 @@
                          break;
                          }
                      }
-            <button type="button" onclick='updateSelectedSeat(@i)' id="selectedSeat.@i" class='col-2 d-flex justify-content-center align-items-center border @bgColor mt-2 p-4 fs-3' @(bgColor == "bg-secondary" ? "disabled" : "") >
-                @i
+            <button type="button" onclick='updateSelectedSeat(@i)' id="selectedSeat.@i" class='busSeat col-2 d-flex justify-content-center align-items-center border @bgColor mt-2 p-4 fs-3' @(bgColor == "bg-secondary" ? "disabled" : "") >
+                            @i 
                 </button>
              @if (i % 4 == 0)
             {
@@ -41,22 +45,22 @@
         }
         </div></li>
         </ul>
-
    </div>
     <div class="offset-1 col-4" >
    <form asp-controller="BusTicket" asp-action="SeatSelection" method="post">
-      <input type="hidden" name="TripId" value=@Model.Trip.Id>
+      <input type="hidden" name="TripId" value=@Model.TripId>
+      <input type="hidden" name="TotalPrice" value=@Model.TotalPrice>
         <ul class="list-group">
              <li class="list-group-item active"><strong>TRIP DETAILS</strong></li>
-             <li class="list-group-item"><strong>Date of Journey :</strong> @Model.Trip.ScheduleDate</li>
-             <li class="list-group-item"><strong>Source :</strong> @Model.Trip.MidLine.StartingPoint</li>
-             <li class="list-group-item"><strong>Destination :</strong> @Model.Trip.MidLine.Destination</li>
-             <li class="list-group-item"><strong>Departure Time :</strong> @Model.Trip.DepartureTime</li>
-             <li class="list-group-item"><strong>Arrival Time :</strong> @Model.Trip.ArrivalTime</li>
+                <li class="list-group-item"><strong>Date of Journey :</strong> @Model.Trips[0].ScheduleDate</li>
+             <li class="list-group-item"><strong>Source :</strong> @Model.Trips[0].MidLine.StartingPoint</li>
+             <li class="list-group-item"><strong>Destination :</strong> @Model.Trips[Model.Trips.Count-1].MidLine.Destination</li>
+                <li class="list-group-item"><strong>Departure Time :</strong> @Model.Trips[0].DepartureTime</li>
+             <li class="list-group-item"><strong>Arrival Time :</strong> @Model.Trips[Model.Trips.Count-1].ArrivalTime</li>
              <li class="list-group-item"><strong>Selected Seat :</strong>
                  <input class="nothing" type="text" asp-for="SelectedSeatNo" id="selectedSeat" placeholder="Please make a selection" value="" readonly />
                  </li>
-             <li class="list-group-item"><strong>Ticket Price :</strong> @Model.Trip.FareAmount ₺</li>
+             <li class="list-group-item"><strong>Ticket Price :</strong> @Model.TotalPrice ₺</li>
         </ul>
         <span asp-validation-for="SelectedSeatNo" class="text-danger ms-2"></span>
         <div class="text-end mt-3"><button class="btn btn-primary" type="submit">Add Passenger Details</button></div>

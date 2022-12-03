@@ -9,15 +9,22 @@ namespace BusTicket.Web.Controllers
     public class HomeController : Controller
     {
         private readonly ITripService _tripService;
+        private readonly IMidlineService _midlineService;
 
-        public HomeController(ITripService tripService)
+        public HomeController(ITripService tripService, IMidlineService midlineService)
         {
             _tripService = tripService;
+            _midlineService = midlineService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var midlines = await _midlineService.GetAllAsync();
+            var tripSearchModel = new TripSearchModel()
+            {
+                MidLines = midlines
+            };
+            return View(tripSearchModel);
         }
 
         [HttpPost]
@@ -26,9 +33,13 @@ namespace BusTicket.Web.Controllers
             if (ModelState.IsValid)
             {
                 SearchModel.Date = Jobs.UpdateDateFormat(SearchModel.Date);
-                var trips = await _tripService.GetAllTripsWDetails();
                 return RedirectToAction("TripList","BusTicket", SearchModel);
-            };
+            }
+            else
+            {
+                var midlines = await _midlineService.GetAllAsync();
+                SearchModel.MidLines = midlines;
+            }
             return View(SearchModel);
         }
 

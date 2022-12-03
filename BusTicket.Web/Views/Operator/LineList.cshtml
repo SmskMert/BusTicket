@@ -1,0 +1,67 @@
+﻿@model List<Line>
+
+<div class="d-flex justify-content-between align-items-center">
+    <div class="display-6 text-primary ms-2 text-center">
+        Line List
+    </div>
+    <div>
+        <a asp-controller="Operator" asp-action="CreateLine" class="btn btn-primary">Create Line</a>
+    </div>
+</div>
+<hr>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">StartingPoint</th>
+            <th scope="col">Destination</th>
+            <th scope="col">Stops</th>
+            <th scope="col">Date</th>
+            <th scope="col">Departure Time</th>
+            <th scope="col">Arrival Time</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var line in Model)
+        {
+            <tr>
+                <td>@line.Id</td>
+                <td>@line.StartingPoint</td>
+                <td>@line.Destination</td>
+                <td>
+                    @if (line.MidLines.Count == 0)
+                    {
+                        <p class="text-danger">No Stop</p>
+                    }
+                    else
+                    {
+                        var midlines = "";
+                        @foreach (var midline in line.MidLines)
+                        {
+                            if (midline.Destination == line.Destination)
+                            {
+                                continue;
+                            }
+                            midlines = midlines == "" ? midline.Destination : midlines + "-" + midline.Destination;
+                        }
+                        <p>@midlines</p>
+                    }
+
+                </td>
+                <td>@line.MidLines.First().Trips.First().ScheduleDate</td>
+                <td>@line.MidLines.First().Trips.First().DepartureTime</td>
+                <td>@line.MidLines.Last().Trips.Last().ArrivalTime</td>
+
+                <td>
+                    <div>
+                            <a asp-controller="Operator" asp-action="LineDetails" asp-route-id=@line.Id class="btn btn-outline-primary">Details</a>
+                        <a asp-controller="Operator" asp-action="DeleteRole" asp-route-id=@line.Id class="btn btn-outline-warning">Update</a>
+                        <a asp-controller="Operator" asp-action="DeleteRole" asp-route-id=@line.Id class="btn btn-outline-danger">Delete</a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

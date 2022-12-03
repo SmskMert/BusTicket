@@ -1,12 +1,10 @@
-﻿@model List<Trip>
-
-   
+﻿@model List<CombinedTripsModel>
 
 @section FontAwesomeCDN{
     @await Html.PartialAsync("_FontAwesomeCDNPartial")
 }
 
-    @section PopperCDN{
+@section PopperCDN{
     @await Html.PartialAsync("_PopperCDNPartial")
 }
 
@@ -15,69 +13,72 @@
 </div>
 <hr>
 
- @if (Model.Count == 0)
-    {
-        @await Html.PartialAsync("_NoTrip")
-    }
+@if (Model.Count == 0)
+{
+    @await Html.PartialAsync("_NoTrip")
+}
 
 <div class="container-fluid mt-4">
-    @foreach (var trip in Model)
+    @foreach (var cTM in Model)
     {
-   <div class="row">
-       <div class="col-12 mb-3">
-        <div class="card">
-             <div class="card-body">
-                 <div class="row">
-                     <div class="col-md-2 d-flex justify-content-start align-items-center">
-                         <img src="~/images/KamilKocLogo.png" width=150px  alt="...">
-                     </div>
-                     
-                     <div class="col-md-3 d-flex justify-content-center align-items-center">
-                        <h5 class="card-title m-0">@trip.DepartureTime  - @trip.ArrivalTime</h5>
-                     </div>
+        <div class="row">
+            <div class="col-12 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-2 d-flex justify-content-start align-items-center">
+                                <img src="~/images/KamilKocLogo.png" width=150px alt="...">
+                            </div>
 
-                     <div class="col-md-2 d-flex justify-content-center align-items-center">
-                        <p class="card-text">@trip.MidLine.StartingPoint > @trip.MidLine.Destination</p>
-                     </div>
+                            <div class="col-md-3 d-flex justify-content-center align-items-center">
+                                <h5 class="card-title m-0">@cTM.CombinedTrips.First().DepartureTime  - @cTM.CombinedTrips.Last().ArrivalTime</h5>
+                            </div>
 
-                     <div class="col-md-3 d-flex justify-content-center align-items-center">
-                        <h5 class="card-title m-0">@trip.FareAmount ₺</h5>
-                     </div>
+                            <div class="col-md-2 d-flex justify-content-center align-items-center">
+                                <p class="card-text">@cTM.CombinedTrips.First().MidLine.StartingPoint > @cTM.CombinedTrips.Last().MidLine.Destination</p>
+                            </div>
 
-                     <div class="col-md-2 d-flex justify-content-end align-items-center">
-                         <div>
-                        <a asp-controller="BusTicket" asp-action="SeatSelection" asp-route-id=@trip.Id class="btn btn-primary">Pick Seat</a>
+                            <div class="col-md-3 d-flex justify-content-center align-items-center">
+                                <h5 class="card-title m-0">@cTM.TotalPrice ₺</h5>
+                            </div>
+
+                            <div class="col-md-2 d-flex justify-content-end align-items-center">
+                                <div>
+                                <a asp-controller="BusTicket" asp-action="SeatSelection"
+                                   asp-route-id=@cTM.CombinedTripIds
+                                   }
+                                   class="btn btn-primary">Pick Seat</a>
+                            </div>
                         </div>
-                     </div>
 
-                 </div>
-             </div>
-             <div class="card-footer d-flex justify-content-center">
-                 <div class="text-primary d-flex justify-content-center fs-5">
-                     @if (trip.TripDetail.Bus.HasWifi)
-                     {
-                      <div class="ps-2 pe-2" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Has Wifi" data-bs-placement="bottom">
-                            <i class="fa-solid fa-wifi"></i>
-                     </div>
-                         
-                     }
-                      @if (trip.TripDetail.Bus.HasUSB)
-                     {
-                     <div class="ps-2 pe-2" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Has Power" data-bs-placement="bottom">
-                            <i class="fa-solid fa-plug"></i>
-                     </div>
-                     }
-                      @if (trip.TripDetail.Bus.HasSeatScreen)
-                     {
-                        <div class="ps-2 pe-2" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Has Seat Screen" data-bs-placement="bottom">
-                           <i class="fa-solid fa-tablet-screen-button"></i>
-                       </div>
-                     }
-                 </div>
-              </div>
+                    </div>
+                </div>
+                <div class="card-footer d-flex justify-content-center">
+                    <div class="text-primary d-flex justify-content-center fs-5">
+                            @if (cTM.CombinedTrips.First().TripDetail.Bus.HasWifi)
+                            {
+                                <div class="ps-2 pe-2" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Has Wifi" data-bs-placement="bottom">
+                                    <i class="fa-solid fa-wifi"></i>
+                                </div>
+
+                            }
+                            @if (cTM.CombinedTrips.First().TripDetail.Bus.HasUSB)
+                            {
+                                <div class="ps-2 pe-2" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Has Power" data-bs-placement="bottom">
+                                    <i class="fa-solid fa-plug"></i>
+                                </div>
+                            }
+                            @if (cTM.CombinedTrips.First().TripDetail.Bus.HasSeatScreen)
+                            {
+                                <div class="ps-2 pe-2" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Has Seat Screen" data-bs-placement="bottom">
+                                    <i class="fa-solid fa-tablet-screen-button"></i>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-   </div>
     }
 </div>
 

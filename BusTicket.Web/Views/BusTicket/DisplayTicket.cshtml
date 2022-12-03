@@ -21,35 +21,35 @@
                 <p class="card-text"><Strong>Bus</Strong></p>
             </div>
             <div class="col-7 border">
-                <p class="card-text">@Model.Ticket.Trip.MidLine.Line.StartingPoint - @Model.Ticket.Trip.MidLine.Line.Destination</p>
+                        <p class="card-text">@Model.Tickets.First().Trip.MidLine.Line.StartingPoint - @Model.Tickets[0].Trip.MidLine.Line.Destination</p>
             </div>
 
             <div class="col-4 border">
                 <p class="card-text"><Strong>Date</Strong></p>
             </div>
             <div class="col-7 border">
-                <p class="card-text">@Model.Ticket.Trip.ScheduleDate </p>
+                <p class="card-text">@Model.Tickets.First().Trip.ScheduleDate </p>
             </div>
 
             <div class="col-4 border">
                 <p class="card-text"><Strong>Departure From</Strong></p>
             </div>
             <div class="col-7 border">
-                <p class="card-text">@Model.Ticket.Trip.MidLine.StartingPoint , @Model.Ticket.Trip.DepartureTime</p>
+                        <p class="card-text">@Model.Tickets.First().Trip.MidLine.StartingPoint , @Model.Tickets.First().Trip.DepartureTime</p>
             </div>
 
             <div class="col-4 border">
                 <p class="card-text"><Strong>Arrive To</Strong></p>
             </div>
             <div class="col-7 border">
-                <p class="card-text">@Model.Ticket.Trip.MidLine.Destination , @Model.Ticket.Trip.ArrivalTime</p>
+                <p class="card-text">@Model.Tickets.Last().Trip.MidLine.Destination , @Model.Tickets.Last().Trip.ArrivalTime</p>
             </div>
 
             <div class="col-4 border">
                 <p class="card-text"><Strong>Seat No</Strong></p>
             </div>
             <div class="col-7 border">
-                <p class="card-text">@Model.SelectedSeatNo</p>
+                        <p class="card-text">@Model.Tickets.Last().SeatNo</p>
             </div>
         </div>
       </div>

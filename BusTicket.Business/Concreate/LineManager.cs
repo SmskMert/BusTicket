@@ -42,5 +42,20 @@ namespace BusTicket.Business.Concreate
         {
             await _lineRepository.UpdateAsync(line);
         }
+
+        public async Task<List<Line>> GetLinesBySearchAsync(string from, string to)
+        {
+            return await _lineRepository.GetLinesBySearchAsync(from, to);
+        }
+
+        public async Task<List<Line>> GetLinesWithTripsAsync()
+        {
+           return await _lineRepository.GetLinesWithTripsAsync();
+        }
+
+        public async Task<Line> GetLineWithDetailsAsync(int id)
+        {
+            return await _lineRepository.GetLineWithDetailsAsync(id);
+        }
     }
 }

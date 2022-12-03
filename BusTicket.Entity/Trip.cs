@@ -29,7 +29,7 @@ namespace BusTicket.Entity
 
         public string? Remarks { get; set; }
 
-        public decimal? FareAmount { get; set; }
+        public decimal FareAmount { get; set; }
 
     }
 }

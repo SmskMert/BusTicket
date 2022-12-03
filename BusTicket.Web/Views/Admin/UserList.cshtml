@@ -4,35 +4,35 @@
     @await Html.PartialAsync("_DataTableScriptCDNPartial")
 }
 
-@section DataTableCssCDN{
+    @section DataTableCssCDN{
     @await Html.PartialAsync("_DataTableCssCDNPartial")
 }
 
-<div class="d-flex justify-content-between align-items-center">
-    <div class="display-6 text-primary ms-2 text-center">
-        User List
+    <div class="d-flex justify-content-between align-items-center">
+        <div class="display-6 text-primary ms-2 text-center">
+            User List
+        </div>
+        <div>
+            <a asp-controller="Admin" asp-action="CreateUser" class="btn btn-primary">CreateUser</a>
+        </div>
     </div>
-    <div>
-        <a asp-controller="Admin" asp-action="CreateUser" class="btn btn-primary">CreateUser</a>
-    </div>
-</div>
-<hr>
+    <hr>
 
-<table id="userTable_id" class="display">
-    <thead>
-        <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>User Name</th>
-            <th>Email</th>
-            <th>Roles</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
+    <table id="userTable_id" class="display">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>User Name</th>
+                <th>Email</th>
+                <th>Roles</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
         @foreach (var user in Model)
         {
-        <tr>
+            <tr>
                 <td>@user.FirstName</td>
                 <td>@user.LastName</td>
                 <td>@user.UserName</td>
@@ -45,10 +45,14 @@
                 </td>
 
                 <td>
-                    <a class="btn btn-sm btn-outline-warning" asp-controller="Admin" asp-action="EditUserRoles" asp-route-id =@user.UserId>Edit User Role</a>
+                    <div>
+                        <a class="btn btn-sm btn-outline-warning" asp-controller="Admin" asp-action="EditUserRoles" asp-route-id=@user.UserId>Edit User Role</a>
+                        <a class="btn btn-sm btn-outline-secondary" asp-controller="Admin" asp-action="EditUserDetails" asp-route-id=@user.UserId>Edit User Details</a>
+                        <a class="btn btn-sm btn-outline-danger" asp-controller="Admin" asp-action="DeleteUser" asp-route-id=@user.UserId>Delete</a>
+                    </div>
                 </td>
-            
-        </tr>
+
+            </tr>
         }
     </tbody>
 </table>

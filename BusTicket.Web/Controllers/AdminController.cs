@@ -4,6 +4,7 @@ using BusTicket.Web.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
 namespace BusTicket.Web.Controllers
@@ -52,6 +53,26 @@ namespace BusTicket.Web.Controllers
             };
             return View(roleModel);
         }
+        [HttpPost]
+        public async Task<IActionResult> UpdateRole(string id, string name)
+        {
+
+            var role = await _roleManager.FindByIdAsync(id);
+            role.Name = name;
+
+            await _roleManager.UpdateAsync(role);
+
+
+            return RedirectToAction("RoleList");
+        }
+
+        public async Task<IActionResult> DeleteRole(string id)
+        {
+            var role = await _roleManager.FindByIdAsync(id);
+            await _roleManager.DeleteAsync(role);
+            return RedirectToAction("RoleList");
+        }
+
         #endregion
 
         #region UserActions
@@ -72,22 +93,84 @@ namespace BusTicket.Web.Controllers
                         Roles = await _userManager.GetRolesAsync(user)
                     });
             }
-            // var UsersWithRoles = users
-            //     .Select(
-            //     user => new UserWithRolesModel
-            //     {
-            //         UserId = user.Id,
-            //         UserName = user.UserName,
-            //         FirstName = user.FirstName,
-            //         LastName = user.LastName,
-            //         Email = user.Email,
-            //         Role = await _userManager.GetRolesAsync(user)
-            //     }
-            //);
-
 
             return View(usersWithRoles);
         }
+        public async Task<IActionResult> EditUserDetails(string id)
+        {
+            var user = await _userManager.FindByIdAsync(id);
+
+            EditUserDetailsModel editUserDetails = new()
+            {
+                Id = user.Id,
+                FirstName = user.FirstName,
+                UserName = user.UserName,
+                LastName = user.LastName,
+                Email = user.Email
+            };
+
+            return View(editUserDetails);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditUserDetails(EditUserDetailsModel editUserDetails)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = await _userManager.FindByIdAsync(editUserDetails.Id);
+                user.FirstName = editUserDetails.FirstName;
+                user.LastName = editUserDetails.LastName;
+                user.Email = editUserDetails.Email;
+                user.UserName = editUserDetails.UserName;
+
+                await _userManager.UpdateAsync(user);
+
+                return RedirectToAction("UserList");
+            }
+            return View(editUserDetails);
+        }
+
+        public async Task<IActionResult> DeleteUser(string id)
+        {
+
+            var user = await _userManager.FindByIdAsync(id);
+            await _userManager.DeleteAsync(user);
+
+            return RedirectToAction("UserList");
+
+        }
+
+
+        public async Task<IActionResult> CreateUser()
+        {
+            ViewBag.Roles = await _roleManager.Roles.ToListAsync();
+            CreateUserModel createUserModel = new();
+            return View(createUserModel);
+        }
+        [HttpPost]
+        public async Task<IActionResult> CreateUser(CreateUserModel createUserModel)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = new User()
+                {
+                    UserName = createUserModel.UserName,
+                    Email = createUserModel.Email,
+                    FirstName = createUserModel.FirstName,
+                    LastName = createUserModel.LastName
+                };
+
+                var result = await _userManager.CreateAsync(user, createUserModel.Password);
+                if (result.Succeeded)
+                {
+                   await _userManager.AddToRolesAsync(user, createUserModel.SelectedRoles);
+                }
+                return RedirectToAction("UserList");
+            }
+            ViewBag.Roles = await _roleManager.Roles.ToListAsync();
+            return View(createUserModel);
+        }
+
 
         public async Task<IActionResult> EditUserRoles(string id)
         {
@@ -119,11 +202,11 @@ namespace BusTicket.Web.Controllers
             {
                 foreach (var NewRole in editUserRolesModel.SelectedRoles)
                 {
-                if (!userRoles.Contains(NewRole)) await _userManager.AddToRoleAsync(user, NewRole);
+                    if (!userRoles.Contains(NewRole)) await _userManager.AddToRoleAsync(user, NewRole);
                 }
                 foreach (var currentRole in userRoles)
                 {
-                    if (!editUserRolesModel.SelectedRoles.Contains(currentRole)) await _userManager.RemoveFromRoleAsync(user,currentRole);
+                    if (!editUserRolesModel.SelectedRoles.Contains(currentRole)) await _userManager.RemoveFromRoleAsync(user, currentRole);
                 }
                 return RedirectToAction("UserList");
             }

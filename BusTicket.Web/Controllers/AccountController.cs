@@ -1,4 +1,5 @@
-﻿using BusTicket.Data.Identity;
+﻿using BusTicket.Core;
+using BusTicket.Data.Identity;
 using BusTicket.Web.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -39,7 +40,15 @@ namespace BusTicket.Web.Controllers
                 if (result.Succeeded)
                 {
                     await _userManager.AddToRoleAsync(user, "Customer");
+                    TempData["Message"] = Jobs.CreateMessage("Register Successful", "The registration is succesfully completed.", "success");
                     return RedirectToAction("Login");
+                }
+                else
+                {
+                    var message = "";
+                   var errors = result.Errors.ToList();
+                    errors.ForEach(e => { message = message == "" ? e.Description : message + " & " + e.Description; });
+                    TempData["Message"] = Jobs.CreateMessage("Register Failed", message, "danger");
                 }
             }
             return View(registerModel);
@@ -67,7 +76,8 @@ namespace BusTicket.Web.Controllers
                     var result = await _signInManager.PasswordSignInAsync(user, loginModel.Password, loginModel.IsPersistent, false);
                     if (result.Succeeded)
                     {
-                    return Redirect(loginModel.ReturnUrl ?? "~/");
+                     
+                        return Redirect(loginModel.ReturnUrl ?? "~/");
                     }
                     else
                     {

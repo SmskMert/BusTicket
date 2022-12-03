@@ -18,5 +18,9 @@ namespace BusTicket.Business.Abstract
         Task UpdateAsync(Line line);
 
         Task DeleteAsync(Line line);
+        Task<List<Line>> GetLinesBySearchAsync(string from, string to);
+        Task<List<Line>> GetLinesWithTripsAsync();
+        Task<Line> GetLineWithDetailsAsync(int id);
+
     }
 }

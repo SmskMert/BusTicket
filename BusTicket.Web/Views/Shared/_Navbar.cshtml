@@ -23,6 +23,11 @@
                             {
                             <li><a class="dropdown-item" asp-controller="Home" asp-action="Index">Display Tickets</a></li>
                             }
+                              @if (User.IsInRole("Operator"))
+                            {
+                                <li><a class="dropdown-item" asp-controller="Operator" asp-action="LineList">LineList</a></li>
+                                <li><a class="dropdown-item" asp-controller="Operator" asp-action="BusList">BusList</a></li>
+                            }
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" asp-controller="Account" asp-action="ChangePassword">Change Password</a></li>
                         </ul>

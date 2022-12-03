@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,17 @@ namespace BusTicket.Core
             var month = dateArray[1];
             var year = dateArray[0];
             return day + "." + month + "." + year;
+        }
+
+        public static string CreateMessage(string title, string message, string alertType)
+        {
+            var msg = new AlertMessage()
+            {
+                Title = title,
+                Message = message,
+                AlertType = alertType
+            };
+            return JsonConvert.SerializeObject(msg);
         }
     }
 }

@@ -9,6 +9,6 @@ namespace BusTicket.Data.Abstract
 {
     public interface ICustomerRepository : IRepository<Customer>
     {
-
+        Task<Customer> GetCustomerByUserNameAsync(string userName);
     }
 }

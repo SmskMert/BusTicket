@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "hWsZ//6s9LteuTHU/xgE1u/zMLS6/8Ozu+mPWvNZ0yGehaBHDgLuEk3bdNvTbxWo1+PK6PFhC1w7FQMTEgx+SQ==",
+  "dgSpecHash": "zZ3YlQwZZ8/YH5dbgxKh48eD38rJl1W2GHZ3DzU6oYtz0Ql1cweTDzxdo//ipUVubvLmJ8+1keHgf/EzLsJhnw==",
   "success": true,
-  "projectFilePath": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\BusTicket\\BusTicket.Core\\BusTicket.Core.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Core\\BusTicket.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ÖĞLE\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

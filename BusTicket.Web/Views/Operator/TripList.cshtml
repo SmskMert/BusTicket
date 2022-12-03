@@ -1,0 +1,49 @@
+﻿@model List<Trip>
+
+<div class="d-flex justify-content-between align-items-center">
+    <div class="display-6 text-primary ms-2 text-center">
+        Trip List
+    </div>
+    <div>
+        <a asp-controller="Operator" asp-action="TripList" class="btn btn-primary">Create Trip</a>
+        <a asp-controller="Operator" asp-action="TripList" class="btn btn-warning">Update Trip</a>
+    </div>
+</div>
+<hr>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">MidLineId</th>
+            <th scope="col">StartingPoint</th>
+            <th scope="col">Destination</th>
+            <th scope="col">ArrivalTime</th>
+            <th scope="col">DepartureTime</th>
+            <th scope="col">Line Id</th>
+            <th scope="col">Line Details</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var trip in Model)
+        {
+            <tr>
+                <td>@trip.Id</td>
+                <td>@trip.MidLineId</td>
+                <td>@trip.MidLine.StartingPoint</td>
+                <td>@trip.MidLine.Destination</td>
+                <td>@trip.ArrivalTime</td>
+                <td>@trip.DepartureTime</td>
+                <td>@trip.MidLine.Line.Id</td>
+                <td>@trip.MidLine.Line.StartingPoint - @trip.MidLine.Line.Destination</td>
+                <td>
+                    <div>
+                        <button type="button" class="btn btn-outline-warning">Update</button>
+                        <a asp-controller="Operator" asp-action="DeleteRole" asp-route-id=@trip.Id type="button" class="btn btn-outline-danger">Delete</a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

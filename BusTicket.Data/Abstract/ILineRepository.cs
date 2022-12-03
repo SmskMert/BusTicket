@@ -9,6 +9,8 @@ namespace BusTicket.Data.Abstract
 {
     public interface ILineRepository : IRepository<Line>
     {
-
+        Task<List<Line>> GetLinesBySearchAsync(string from, string to);
+        Task<List<Line>> GetLinesWithTripsAsync();
+        Task<Line> GetLineWithDetailsAsync(int id);
     }
 }

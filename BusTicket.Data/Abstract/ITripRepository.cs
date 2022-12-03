@@ -11,7 +11,7 @@ namespace BusTicket.Data.Abstract
     {
         Task<List<Trip>> GetAllTripsWDetails();
         Task<List<Trip>> GetTripsBySearch(string origin, string destination, string date);
-
+        Task<List<Trip>> GetTripsBySearchAndLine(string origin, string destination, string date, int lineId);
         Task<Trip> GetTripWithDetails(int id);
     }
 }

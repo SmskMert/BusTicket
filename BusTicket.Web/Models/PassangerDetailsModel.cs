@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using BusTicket.Entity;
+using System.ComponentModel.DataAnnotations;
 
 namespace BusTicket.Web.Models
 {
@@ -29,6 +30,11 @@ namespace BusTicket.Web.Models
         [Required(ErrorMessage = "Email must be provided.")]
         [DataType(DataType.EmailAddress)]
         public string? Email { get; set; }
+
+        public Customer? Customer { get; set; } = null!;
+        public bool SavePassangerDetails { get; set; }
+
+        public decimal TotalPrice { get; set; }
 
     }
 }

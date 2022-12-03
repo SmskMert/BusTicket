@@ -1,5 +1,4 @@
-﻿
-@model PassangerDetailsModel
+﻿@model PassangerDetailsModel
 
 <div class="display-6 text-primary ms-2 text-center">
     Passanger Details
@@ -7,82 +6,110 @@
 <hr>
 
 <form asp-controller="BusTicket" asp-action="PassangerDetails" method="post">
-      <input type="hidden" name="SelectedSeatNo" value=@Model.SelectedSeatNo>
-      <input type="hidden" name="TripId" value=@Model.TripId>
-<div class="row border rounded">
-    <div class="col-6 p-0">
-        <div class="text-white bg-primary text-center me-3 rounded-top"><h5 class="p-2">Passanger Information</h5></div>
-        <div class="row m-3">
-            <div class="col-3 d-flex align-items-center">
-                <strong><label asp-for="FName"></label></strong>
+    <input type="hidden" name="SelectedSeatNo" value=@Model.SelectedSeatNo>
+    <input type="hidden" name="TripId" value=@Model.TripId>
+    <input type="hidden" name="TotalPrice" value=@Model.TotalPrice>
+    <div class="row border rounded">
+        <div class="col-6 p-0">
+            <div class="text-white bg-primary text-center me-3 rounded-top"><h5 class="p-2">Passanger Information</h5></div>
+            <div class="row m-3">
+                <div class="col-3 d-flex align-items-center">
+                    <strong><label asp-for="FName"></label></strong>
+                </div>
+                <div class="col-8">
+                    <input type="text" asp-for="FName" class="form-control" placeholder="Please enter passangers first name">
+                </div>
+                <strong><span asp-validation-for="FName" class="text-danger offset-3 col p-2"></span></strong>
             </div>
-            <div class="col-8">
-               <input type="text" asp-for="FName" class="form-control" placeholder="Please enter passangers first name">
+            <div class="row m-3">
+                <div class="col-3 d-flex align-items-center">
+                    <strong><label asp-for="LName"></label></strong>
+                </div>
+                <div class="col-8">
+                    <input type="text" asp-for="LName" class="form-control" placeholder="Please enter passangers last name">
+                </div>
+                <strong><span asp-validation-for="LName" class="text-danger offset-3 col p-2"></span></strong>
             </div>
-            <strong><span asp-validation-for="FName" class="text-danger offset-3 col p-2"></span></strong>
-        </div>
-         <div class="row m-3">
-            <div class="col-3 d-flex align-items-center">
-                <strong><label asp-for="LName"></label></strong>
+            <div class="row m-3">
+                <div class="col-3 d-flex align-items-center">
+                    <strong><label asp-for="Age"></label></strong>
+                </div>
+                <div class="col-8">
+                    <input type="text" asp-for="Age" class="form-control" placeholder="Please enter passangers age">
+                </div>
+                <strong><span asp-validation-for="Age" class="text-danger offset-3 col p-2"></span></strong>
             </div>
-            <div class="col-8">
-               <input type="text" asp-for="LName" class="form-control" placeholder="Please enter passangers first name">
-            </div>
-            <strong><span asp-validation-for="LName" class="text-danger offset-3 col p-2"></span></strong>
-        </div>
-        <div class="row m-3">
-            <div class="col-3 d-flex align-items-center">
-                <strong><label asp-for="Age"></label></strong>
-            </div>
-            <div class="col-8">
-               <input type="text" asp-for="Age" class="form-control" placeholder="Please enter passangers first name">
-            </div>
-            <strong><span asp-validation-for="Age" class="text-danger offset-3 col p-2"></span></strong>
-        </div>
-        <div class="row m-3">
-            <div class="col-3 d-flex align-items-center">
-                <strong><label asp-for="Gender"></label></strong>
-            </div>
-            <div class="col-8">
-                <select class="form-select" asp-for="Gender" id="genderInput">
-                      <option value="" disabled selected hidden>Please select a gender</option>
-                      <option value="Male">Male</option>
-                      <option value="Female">Female</option>
-                </select>
-            </div>
-            @if (@ViewBag.GenderErrorMessage != null)
-            {
-            <strong><span class="text-danger offset-3 col p-2">@ViewBag.GenderErrorMessage</span></strong>
-            }
-            <strong><span asp-validation-for="Gender" class="text-danger offset-3 col p-2"></span></strong>
+            <div class="row m-3">
+                <div class="col-3 d-flex align-items-center">
+                    <strong><label asp-for="Gender"></label></strong>
+                </div>
+                <div class="col-8">
+                    <select class="form-select" asp-for="Gender" id="genderInput">
+                        <option value="" disabled selected hidden>Please select a gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+                @if (@ViewBag.GenderErrorMessage != null)
+                {
+                    <strong><span class="text-danger offset-3 col p-2">@ViewBag.GenderErrorMessage</span></strong>
+                }
+                <strong><span asp-validation-for="Gender" class="text-danger offset-3 col p-2"></span></strong>
 
+            </div>
+        </div>
+
+
+
+
+        <div class="col-6 p-0">
+            <div class="text-white bg-primary text-center ms-3 rounded-top"><h5 class="p-2">Contact Information</h5></div>
+            <div class="row m-3">
+                <div class="col-3 d-flex align-items-center">
+                    <strong><label asp-for="Contact"></label></strong>
+                </div>
+                <div class="col-8">
+                    <input type="text" asp-for="Contact" class="form-control" placeholder="Please enter passangers Contact Name">
+                </div>
+                <strong><span asp-validation-for="Contact" class="text-danger offset-3 col p-2"></span></strong>
+            </div>
+            <div class="row m-3">
+                <div class="col-3 d-flex align-items-center">
+                    <strong><label asp-for="Email"></label></strong>
+                </div>
+                <div class="col-8">
+                    <input type="text" asp-for="Email" class="form-control" placeholder="Please enter passangers Email">
+                </div>
+                <strong><span asp-validation-for="Email" class="text-danger offset-3 col p-2"></span></strong>
+            </div>
+             @if (User.IsInRole("Customer") && Model.Customer !=null)
+            {
+            <div class="row my-3 me-4 pe-5">
+                <div class="text-end">
+                        <a asp-controller="BusTicket" asp-action="UseSavedPassangerInfo" asp-route-tripId=@Model.TripId asp-route-selectedSeatNo=@Model.SelectedSeatNo asp-route-totalPrice=@Model.TotalPrice.ToString() class="btn btn-sm btn-outline-primary">Use saved passanger details</a>
+                </div>
+            </div>
+            }
         </div>
     </div>
-
-
-
-
-    <div class="col-6 p-0">
-        <div class="text-white bg-primary text-center ms-3 rounded-top"><h5 class="p-2">Contact Information</h5></div>
-        <div class="row m-3">
-            <div class="col-3 d-flex align-items-center">
-                <strong><label asp-for="Contact"></label></strong>
-            </div>
-            <div class="col-8">
-               <input type="text" asp-for="Contact" class="form-control" placeholder="Please enter passangers first name">
-            </div>
-            <strong><span asp-validation-for="Contact" class="text-danger offset-3 col p-2"></span></strong>
-       </div>
-       <div class="row m-3">
-            <div class="col-3 d-flex align-items-center">
-                <strong><label asp-for="Email"></label></strong>
-            </div>
-            <div class="col-8">
-               <input type="text" asp-for="Email" class="form-control" placeholder="Please enter passangers first name">
-            </div>
-            <strong><span asp-validation-for="Email" class="text-danger offset-3 col p-2"></span></strong>
-       </div>
-   </div>
-</div>
-        <div class="text-end mt-3"><button class="btn btn-primary" type="submit">Proceed To Payment</button></div>
+    <div class="row">
+        <div class="col-6 d-flex align-items-center">
+            @if (User.IsInRole("Customer"))
+            {
+                <input asp-for="SavePassangerDetails" class ="form-check-input" type="checkbox" />
+                <label class="ms-1 mt-1">
+                    @(Model.Customer != null ? "Update" : "Save")
+                   the passanger details</label>
+            }
+        </div>
+        <div class="col-6 text-end mt-3">
+            <button class="btn btn-primary" type="submit">Proceed To Payment</button>
+        </div>
+    </div>
 </form>
+
+    @if (ViewBag.checkoutFormInitialize != null)
+    {
+    @Html.Raw(ViewBag.checkoutFormInitialize)
+    }
+    <div id="iyzipay-checkout-form" class="popup"></div>

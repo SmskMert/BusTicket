@@ -38,3 +38,10 @@ companyimg {
     outline: none;
     background: white;
 }
+
+.busSeat {
+    background-image: url('../images/busSeat.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}

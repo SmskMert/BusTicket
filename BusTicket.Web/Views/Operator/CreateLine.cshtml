@@ -1,0 +1,255 @@
+﻿@model CreateLineModel
+
+<div class="d-flex justify-content-between align-items-center">
+    <div class="display-6 text-primary ms-2 text-center">
+        Create Line
+    </div>
+    <div>
+        <a asp-controller="Operator" asp-action="LineList" class="btn btn-primary">Line List</a>
+    </div>
+</div>
+<hr>
+
+<form asp-controller="Operator" asp-action="CreateLine" method="post">
+    <div class="text-danger" asp-validation-summary="All"></div>
+    @{
+        var i = 1;
+    }
+    <div class="row">
+        <div class="col-md-7">
+            <div class="border rounded p-3">
+                <div class="row border-bottom">
+                    <div class="col-md-2">
+                        <h6>Order</h6>
+                    </div>
+                    <div class="col-md-3">
+                        <h6>Stop Name</h6>
+                    </div>
+                    <div class="col-md-3">
+                        <h6>Time</h6>
+                    </div>
+                    <div class="col-md-2">
+                        <h6>Fare ₺</h6>
+                    </div>
+                    <div class="col-md-2">
+                        <h6>Action</h6>
+                    </div>
+                </div>
+                <div class="row my-2">
+                    <div class="col-md-2 d-flex align-items-center">
+                        <p class="m-0">Line Start</p>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" placeholder="provide a stop" name="Stops" value="@(Model.StopTimeFares!=null ? Model.StopTimeFares.First().Stop : "")" />
+                    </div>
+                    <div class="col-md-3">
+                        <input type="time" class="form-control" name="Time" value="@(Model.StopTimeFares!=null ? Model.StopTimeFares.First().Time : "")" />
+                    </div>
+                    <div class="col-md-2">
+                        <input type="text" class="form-control" name="Fares" value="@(Model.StopTimeFares!=null ? Model.StopTimeFares.First().Fare : "")" />
+                    </div>
+                    <div class="col-md-2 d-flex align-items-center">
+                        <div class="d-grid col">
+                            <button type="button" class="btn btn-sm btn-outline-primary" onclick="addStop(@(Model.StopTimeFares!=null ? (Model.StopTimeFares.Count-1) : i))">Add Stop</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="midStops">
+
+                    @if (Model.StopTimeFares != null)
+                    {
+                        while (i < (Model.StopTimeFares.Count - 1))
+                        {
+                            <div class="row my-2" id="stop.@i">
+                                <div class="col-md-2 d-flex align-items-center">
+                                    <p class="m-0">@i .Stop</p>
+                                </div>
+                                <div class="col-md-3">
+                                    <input type="text" class="form-control" placeholder="provide a stop" name="Stops" value="@(Model.StopTimeFares!=null ? Model.StopTimeFares[i].Stop : "")" />
+                                </div>
+                                <div class="col-md-3">
+                                    <input type="time" class="form-control" name="Time" value="@(Model.StopTimeFares!=null ? Model.StopTimeFares[i].Time : "")" />
+                                </div>
+                                <div class="col-md-2">
+                                    <input type="text" class="form-control" name="Fares" value="@(Model.StopTimeFares!=null ? Model.StopTimeFares[i].Fare : "")" />
+                                </div>
+                                <div class="col-md-2 d-flex align-items-center">
+                                    <div class="d-grid col">
+                                        <button @(i !=(Model.StopTimeFares.Count-2) ? "disabled" : "") id="removeStopButton.@i" type="button" class="btn btn-sm btn-outline-danger" onclick="removeStop(@i)">Remove</button>
+                                    </div>
+                                </div>
+                            </div>
+                            i++;
+                        }
+                    }
+                </div>
+
+
+                <div class="row mt-2">
+                    <div class="col-md-2">
+                        <p>Line End</p>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" placeholder="provide a stop" name="Stops" value="@(Model.StopTimeFares!=null ? Model.StopTimeFares.Last().Stop : "")" />
+                    </div>
+                    <div class="col-md-3">
+                        <input type="time" class="form-control" name="Time" value="@(Model.StopTimeFares!=null ? Model.StopTimeFares.Last().Time : "")" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-5">
+            <div class="border rounded p-3">
+                <div class="row border-bottom">
+                    <div class="col">
+                        <h6>Details</h6>
+                    </div>
+                </div>
+                <div class="row my-2">
+                    <div class="col-md-3 d-flex align-items-center">
+                        <p class="m-0">Date</p>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="date" class="form-control" asp-for="Date" />
+                    </div>
+                </div>
+                <div class="row my-2">
+                    <div class="col-md-3 d-flex align-items-center">
+                        <p class="m-0">Bus</p>
+                    </div>
+                    <div class="col-md-9">
+                        <select class="form-select" id="busSelect" asp-for="BusId">
+                            <option selected disabled hidden>Please select a bus</option>
+                            @foreach (var bus in Model.Buses)
+                            {
+                                <option value=@bus.Id>@bus.Id</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+                @foreach (var bus in Model.Buses)
+                {
+                    <div hidden id="busDetails.@bus.Id">
+                        <div class="row my-2">
+                            <div class="offset-3 col-md-5 d-flex align-items-center">
+                                <p class="m-0 fw-bolder">Bus Capacity</p>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="d-flex align-items-center">
+                                    <p class="m-0">@bus.Capacity</p>
+                                </div>
+                            </div>
+                            <div class="offset-3 col-md-5 d-flex align-items-center">
+                                <p class="m-0 fw-bolder">HasWifi</p>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="d-flex align-items-center">
+                                    <p class="m-0">@bus.HasWifi</p>
+                                </div>
+                            </div>
+                            <div class="offset-3 col-md-5 d-flex align-items-center">
+                                <p class="m-0 fw-bolder">HasSeatScreen</p>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="d-flex align-items-center">
+                                    <p class="m-0">@bus.HasSeatScreen</p>
+                                </div>
+                            </div>
+                            <div class="offset-3 col-md-5 d-flex align-items-center">
+                                <p class="m-0 fw-bolder">HasUSB</p>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="d-flex align-items-center">
+                                    <p class="m-0">@bus.HasUSB</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+                <div class="row my-2">
+                    <div class="col-md-3 d-flex align-items-center">
+                        <p class="m-0">Driver</p>
+                    </div>
+                    <div class="col-md-9">
+                        <select class="form-select" id="driverSelect" asp-for="DriverId">
+                            <option selected disabled hidden>Please select a driver</option>
+                            @foreach (var driver in Model.Drivers)
+                            {
+                                <option value=@driver.Id>@driver.Name</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">Create Line</button>
+</form>
+
+<script>
+    let i = 1;
+    const addStop = (x) => {
+        if (x != 1 && i == 1) {
+            i = x;
+        }
+
+        const midStopHTML = `<div class="row my-2" id="stop.${i}">
+                                                    <div class="col-md-2 d-flex align-items-center">
+                                                            <p class="m-0">${i} .Stop</p>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <input type="text" class="form-control" placeholder="provide a stop" name="Stops" />
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <input type="time" class="form-control" name="Time"  />
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" name="Fares"  />
+                                                    </div>
+                                                    <div class="col-md-2 d-flex align-items-center">
+                                                        <div class="d-grid col">
+                                                                    <button id="removeStopButton.${i}" type="button" class="btn btn-sm btn-outline-danger" onclick="removeStop(${i})">Remove</button>
+                                                        </div>
+                                                    </div>
+                                    </div>`
+        const midStops = document.getElementById("midStops");
+        midStops.innerHTML = midStops.innerHTML + midStopHTML;
+        if (i != 1) {
+            let removeButtonId = i - 1;
+            document.getElementById(`removeStopButton.${removeButtonId}`).disabled = true;
+        }
+        i += 1;
+        console.log(i);
+    }
+
+
+    const removeStop = (x) => {
+        const stopToBeRemoved = document.getElementById(`stop.${x}`);
+        stopToBeRemoved.remove();
+        if (x != 1) {
+            let removeButtonId = x - 1;
+            document.getElementById(`removeStopButton.${removeButtonId}`).disabled = false;
+        }
+        i -= 1;
+        console.log(i);
+    }
+
+    const busSelect = document.getElementById("busSelect");
+
+    let revealedBusDetailsId = "";
+
+    busSelect.addEventListener('change', (e) => {
+        console.log(revealedBusDetailsId)
+        if (revealedBusDetailsId != "") {
+            const revealedBusDetails = document.getElementById(revealedBusDetailsId);
+            revealedBusDetails.hidden = true;
+        }
+        const busDetails = document.getElementById(`busDetails.${busSelect.value}`);
+        busDetails.hidden = false;
+
+        revealedBusDetailsId = `busDetails.${busSelect.value}`;
+    });
+
+
+</script>

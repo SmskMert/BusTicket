@@ -56,5 +56,11 @@ namespace BusTicket.Business.Concreate
         {
             return await _tripRepository.GetTripWithDetails(id);
         }
+
+        public async Task<List<Trip>> GetTripsBySearchAndLine(string origin, string destination, string date, int lineId)
+        {
+            return await _tripRepository.GetTripsBySearchAndLine(origin, destination, date, lineId);
+
+        }
     }
 }

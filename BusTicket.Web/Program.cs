@@ -58,6 +58,18 @@ builder.Services.AddScoped<ICustomerService, CustomerManager>();
 builder.Services.AddScoped<ITicketRepository, TicketRepository>();
 builder.Services.AddScoped<ITicketService, TicketManager>();
 
+builder.Services.AddScoped<IMidlineRepository, MidlineRepository>();
+builder.Services.AddScoped<IMidlineService, MidlineManager>();
+
+builder.Services.AddScoped<IBusRepository, BusRepository>();
+builder.Services.AddScoped<IBusService, BusManager>();
+
+builder.Services.AddScoped<IDriverRepository, DriverRepository>();
+builder.Services.AddScoped<IDriverService, DriverManager>();
+
+builder.Services.AddScoped<ITripDetailRepository, TripDetailRepository>();
+builder.Services.AddScoped<ITripDetailService, TripDetailManager>();
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();

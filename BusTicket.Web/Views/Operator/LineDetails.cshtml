@@ -1,0 +1,87 @@
+﻿@model Line
+
+<div class="d-flex justify-content-between align-items-center">
+    <div class="display-6 text-primary ms-2 text-center">
+        Line Details
+    </div>
+    <div>
+        <a asp-controller="Operator" asp-action="UpdateLine" asp-route-id=@Model.Id class="btn btn-primary">Update Line</a>
+    </div>
+</div>
+<hr>
+
+<div class="row">
+
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-header fw-bolder">Line (@Model.StartingPoint To @Model.Destination) </div>
+             <div class="card-body">
+                <div class="row border-bottom">
+                    <div class="col-7 fw-bolder">Line Id:</div>
+                    <div class="col-5">@Model.Id</div>
+                </div>
+                <div class="row border-bottom">
+                    <div class="col-7 fw-bolder">Date:</div>
+                    <div class="col-5">@Model.MidLines.First().Trips.First().ScheduleDate</div>
+                </div>
+                <div class="row border-bottom">
+                    <div class="col-7 fw-bolder">Origin:</div>
+                    <div class="col-5">@Model.StartingPoint</div>
+                </div>
+                <div class="row border-bottom">
+                    <div class="col-7 fw-bolder">Destination:</div>
+                    <div class="col-5">@Model.Destination</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-7">
+        <div class="card">
+            <div class="card-header fw-bolder">Midlines</div>
+            <div class="card-body">
+                <div class="row border-bottom">
+                    <div class="col-2 fw-bolder">Order</div>
+                    <div class="col-2 fw-bolder">Origin</div>
+                    <div class="col-2 fw-bolder">Destination</div>
+                    <div class="col-2 fw-bolder">Departure</div>
+                    <div class="col-2 fw-bolder">Arrival</div>
+                    <div class="col-2 fw-bolder">Fare</div>
+
+                </div>
+                @foreach (var midLine in Model.MidLines)
+                {
+                    <div class="row border-bottom">
+                        <div class="col-2">@midLine.MidLineOrder</div>
+                        <div class="col-2">@midLine.StartingPoint</div>
+                        <div class="col-2">@midLine.Destination</div>
+                        <div class="col-2">@midLine.Trips.First().DepartureTime</div>
+                        <div class="col-2">@midLine.Trips.First().ArrivalTime</div>
+                        <div class="col-2">@midLine.Trips.First().FareAmount ₺</div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-2">
+        <div class="card">
+            <div class="card-header fw-bolder">Trip Details </div>
+            <div class="card-body">
+                <div class="row border-bottom">
+                    <div class="col-7 fw-bolder">Bus Id:</div>
+                    <div class="col-5">@Model.MidLines.First().Trips.First().TripDetail.Bus.Id</div>
+                </div>
+                <div class="row border-bottom">
+                    <div class="col-7 fw-bolder">Capacity:</div>
+                    <div class="col-5">@Model.MidLines.First().Trips.First().TripDetail.Bus.Capacity</div>
+                </div>
+                <div class="row border-bottom">
+                    <div class="col-7 fw-bolder">Driver:</div>
+                    <div class="col-5">@Model.MidLines.First().Trips.First().TripDetail.Driver.Name</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

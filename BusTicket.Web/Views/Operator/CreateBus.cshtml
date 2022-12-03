@@ -1,0 +1,61 @@
+﻿@model BusModel
+
+<div class="display-6 text-primary ms-2 text-center">
+    Create Bus
+</div>
+<hr>
+<form asp-controller="Operator" asp-action="CreateBus" method="post">
+    <div class="row mt-4">
+        <div class="offset-3 col-md-6">
+            <div class="row">
+                <div class="col-md-2">
+                    <label class="col-form-label" asp-for="Capacity"></label>
+                </div>
+                <div class="col-md-8">
+                    <select class="form-select" asp-for="Capacity">
+                        <option disabled hidden selected>Select a number</option>
+                        @{
+                            int i = 12;
+                            while (i < 61)
+                            {
+                                <option value=@i>@i</option>
+                                i = i + 4;
+                            }
+                        }
+                    </select>
+                </div>
+                <div class="col-2 text-start">
+                    <button class="btn btn-primary btn-md" type="submit">Create</button>
+                </div>
+                <div class="offset-2 col">
+                    <strong><span class="text-danger" asp-validation-for="Capacity"></span></strong>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+    <div class="row mt-2">
+        <div class="offset-3 col-md-6">
+            <div class="row">
+                <div class="offset-2 col-md-8 d-flex align-items-center">
+                    <input class="form-check-input mt-0" asp-for="HasWifi" type="checkbox">
+                    <label class="col-form-label ms-1" asp-for="HasWifi"></label>
+                </div>
+            </div>
+             <div class="row">
+                <div class="offset-2 col-md-8 d-flex align-items-center">
+                    <input class="form-check-input mt-0" asp-for="HasUSB" type="checkbox">
+                    <label class="col-form-label ms-1" asp-for="HasUSB"></label>
+                </div>
+            </div>
+              <div class="row">
+                <div class="offset-2 col-md-8 d-flex align-items-center">
+                    <input class="form-check-input mt-0" asp-for="HasSeatScreen" type="checkbox">
+                    <label class="col-form-label ms-1" asp-for="HasSeatScreen"></label>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</form>

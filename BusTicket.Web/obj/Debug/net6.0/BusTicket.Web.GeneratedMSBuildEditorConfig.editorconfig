@@ -9,101 +9,137 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BusTicket.Web
 build_property.RootNamespace = BusTicket.Web
-build_property.ProjectDir = D:\05.Software Development\04.BAU-BRIGHT\02.ClonedRepo\BusTicket\BusTicket.Web\
+build_property.ProjectDir = C:\Users\ÖĞLE\source\repos\MertSimsek_Odevler\_BusTicket\BusTicket.Web\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\05.Software Development\04.BAU-BRIGHT\02.ClonedRepo\BusTicket\BusTicket.Web
+build_property.MSBuildProjectDirectory = C:\Users\ÖĞLE\source\repos\MertSimsek_Odevler\_BusTicket\BusTicket.Web
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/05.Software Development/04.BAU-BRIGHT/02.ClonedRepo/BusTicket/BusTicket.Web/Views/Account/ChangePassword.cshtml]
+[C:/Users/ÖĞLE/source/repos/MertSimsek_Odevler/_BusTicket/BusTicket.Web/Views/Account/ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDaGFuZ2VQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/05.Software Development/04.BAU-BRIGHT/02.ClonedRepo/BusTicket/BusTicket.Web/Views/Account/Login.cshtml]
+[C:/Users/ÖĞLE/source/repos/MertSimsek_Odevler/_BusTicket/BusTicket.Web/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/05.Software Development/04.BAU-BRIGHT/02.ClonedRepo/BusTicket/BusTicket.Web/Views/Account/Register.cshtml]
+[C:/Users/ÖĞLE/source/repos/MertSimsek_Odevler/_BusTicket/BusTicket.Web/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/05.Software Development/04.BAU-BRIGHT/02.ClonedRepo/BusTicket/BusTicket.Web/Views/Admin/CreateRole.cshtml]
+[C:/Users/ÖĞLE/source/repos/MertSimsek_Odevler/_BusTicket/BusTicket.Web/Views/Admin/CreateRole.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlUm9sZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/05.Software Development/04.BAU-BRIGHT/02.ClonedRepo/BusTicket/BusTicket.Web/Views/Admin/EditUserRoles.cshtml]
+[C:/Users/ÖĞLE/source/repos/MertSimsek_Odevler/_BusTicket/BusTicket.Web/Views/Admin/CreateUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlVXNlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ÖĞLE/source/repos/MertSimsek_Odevler/_BusTicket/BusTicket.Web/Views/Admin/EditUserDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdFVzZXJEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ÖĞLE/source/repos/MertSimsek_Odevler/_BusTicket/BusTicket.Web/Views/Admin/EditUserRoles.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdFVzZXJSb2xlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/05.Software Development/04.BAU-BRIGHT/02.ClonedRepo/BusTicket/BusTicket.Web/Views/Admin/RoleList.cshtml]
+[C:/Users/ÖĞLE/source/repos/MertSimsek_Odevler/_BusTicket/BusTicket.Web/Views/Admin/RoleList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUm9sZUxpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/05.Software Development/04.BAU-BRIGHT/02.ClonedRepo/BusTicket/BusTicket.Web/Views/Admin/UserList.cshtml]
+[C:/Users/ÖĞLE/source/repos/MertSimsek_Odevler/_BusTicket/BusTicket.Web/Views/Admin/UserList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXNlckxpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/05.Software Development/04.BAU-BRIGHT/02.ClonedRepo/BusTicket/BusTicket.Web/Views/BusTicket/DisplayTicket.cshtml]
+[C:/Users/ÖĞLE/source/repos/MertSimsek_Odevler/_BusTicket/BusTicket.Web/Views/BusTicket/DisplayTicket.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVzVGlja2V0XERpc3BsYXlUaWNrZXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/05.Software Development/04.BAU-BRIGHT/02.ClonedRepo/BusTicket/BusTicket.Web/Views/BusTicket/PassangerDetails.cshtml]
+[C:/Users/ÖĞLE/source/repos/MertSimsek_Odevler/_BusTicket/BusTicket.Web/Views/BusTicket/PassangerDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVzVGlja2V0XFBhc3NhbmdlckRldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/05.Software Development/04.BAU-BRIGHT/02.ClonedRepo/BusTicket/BusTicket.Web/Views/BusTicket/SeatSelection.cshtml]
+[C:/Users/ÖĞLE/source/repos/MertSimsek_Odevler/_BusTicket/BusTicket.Web/Views/BusTicket/SeatSelection.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVzVGlja2V0XFNlYXRTZWxlY3Rpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/05.Software Development/04.BAU-BRIGHT/02.ClonedRepo/BusTicket/BusTicket.Web/Views/BusTicket/TripList.cshtml]
+[C:/Users/ÖĞLE/source/repos/MertSimsek_Odevler/_BusTicket/BusTicket.Web/Views/BusTicket/TripList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVzVGlja2V0XFRyaXBMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/05.Software Development/04.BAU-BRIGHT/02.ClonedRepo/BusTicket/BusTicket.Web/Views/Home/Index.cshtml]
+[C:/Users/ÖĞLE/source/repos/MertSimsek_Odevler/_BusTicket/BusTicket.Web/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/05.Software Development/04.BAU-BRIGHT/02.ClonedRepo/BusTicket/BusTicket.Web/Views/Shared/Error.cshtml]
+[C:/Users/ÖĞLE/source/repos/MertSimsek_Odevler/_BusTicket/BusTicket.Web/Views/Operator/BusList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3BlcmF0b3JcQnVzTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ÖĞLE/source/repos/MertSimsek_Odevler/_BusTicket/BusTicket.Web/Views/Operator/CreateBus.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3BlcmF0b3JcQ3JlYXRlQnVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ÖĞLE/source/repos/MertSimsek_Odevler/_BusTicket/BusTicket.Web/Views/Operator/CreateLine.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3BlcmF0b3JcQ3JlYXRlTGluZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ÖĞLE/source/repos/MertSimsek_Odevler/_BusTicket/BusTicket.Web/Views/Operator/LineDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3BlcmF0b3JcTGluZURldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ÖĞLE/source/repos/MertSimsek_Odevler/_BusTicket/BusTicket.Web/Views/Operator/LineList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3BlcmF0b3JcTGluZUxpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ÖĞLE/source/repos/MertSimsek_Odevler/_BusTicket/BusTicket.Web/Views/Operator/TripList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3BlcmF0b3JcVHJpcExpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ÖĞLE/source/repos/MertSimsek_Odevler/_BusTicket/BusTicket.Web/Views/Operator/UpdateBus.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3BlcmF0b3JcVXBkYXRlQnVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ÖĞLE/source/repos/MertSimsek_Odevler/_BusTicket/BusTicket.Web/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/05.Software Development/04.BAU-BRIGHT/02.ClonedRepo/BusTicket/BusTicket.Web/Views/Shared/_DataTableCssCDNPartial.cshtml]
+[C:/Users/ÖĞLE/source/repos/MertSimsek_Odevler/_BusTicket/BusTicket.Web/Views/Shared/_DataTableCssCDNPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9EYXRhVGFibGVDc3NDRE5QYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/05.Software Development/04.BAU-BRIGHT/02.ClonedRepo/BusTicket/BusTicket.Web/Views/Shared/_DataTableScriptCDNPartial.cshtml]
+[C:/Users/ÖĞLE/source/repos/MertSimsek_Odevler/_BusTicket/BusTicket.Web/Views/Shared/_DataTableScriptCDNPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9EYXRhVGFibGVTY3JpcHRDRE5QYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/05.Software Development/04.BAU-BRIGHT/02.ClonedRepo/BusTicket/BusTicket.Web/Views/Shared/_FontAwesomeCDNPartial.cshtml]
+[C:/Users/ÖĞLE/source/repos/MertSimsek_Odevler/_BusTicket/BusTicket.Web/Views/Shared/_FontAwesomeCDNPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Gb250QXdlc29tZUNETlBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/05.Software Development/04.BAU-BRIGHT/02.ClonedRepo/BusTicket/BusTicket.Web/Views/Shared/_Navbar.cshtml]
+[C:/Users/ÖĞLE/source/repos/MertSimsek_Odevler/_BusTicket/BusTicket.Web/Views/Shared/_Navbar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9OYXZiYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/05.Software Development/04.BAU-BRIGHT/02.ClonedRepo/BusTicket/BusTicket.Web/Views/Shared/_NoTrip.cshtml]
+[C:/Users/ÖĞLE/source/repos/MertSimsek_Odevler/_BusTicket/BusTicket.Web/Views/Shared/_NoTrip.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Ob1RyaXAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/05.Software Development/04.BAU-BRIGHT/02.ClonedRepo/BusTicket/BusTicket.Web/Views/Shared/_PopperCDNPartial.cshtml]
+[C:/Users/ÖĞLE/source/repos/MertSimsek_Odevler/_BusTicket/BusTicket.Web/Views/Shared/_PopperCDNPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Qb3BwZXJDRE5QYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/05.Software Development/04.BAU-BRIGHT/02.ClonedRepo/BusTicket/BusTicket.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/ÖĞLE/source/repos/MertSimsek_Odevler/_BusTicket/BusTicket.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/05.Software Development/04.BAU-BRIGHT/02.ClonedRepo/BusTicket/BusTicket.Web/Views/_ViewImports.cshtml]
+[C:/Users/ÖĞLE/source/repos/MertSimsek_Odevler/_BusTicket/BusTicket.Web/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/05.Software Development/04.BAU-BRIGHT/02.ClonedRepo/BusTicket/BusTicket.Web/Views/_ViewStart.cshtml]
+[C:/Users/ÖĞLE/source/repos/MertSimsek_Odevler/_BusTicket/BusTicket.Web/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/05.Software Development/04.BAU-BRIGHT/02.ClonedRepo/BusTicket/BusTicket.Web/Views/Shared/_Layout.cshtml]
+[C:/Users/ÖĞLE/source/repos/MertSimsek_Odevler/_BusTicket/BusTicket.Web/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-bytg3daezx

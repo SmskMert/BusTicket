@@ -24,6 +24,6 @@ namespace BusTicket.Business.Abstract
         Task<List<Trip>> GetTripsBySearch(string origin, string destination, string date);
 
         Task<Trip> GetTripWithDetails(int id);
-
+        Task<List<Trip>> GetTripsBySearchAndLine(string origin, string destination, string date, int lineId);
     }
 }

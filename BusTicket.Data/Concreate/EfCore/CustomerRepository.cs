@@ -1,5 +1,6 @@
 ﻿using BusTicket.Data.Abstract;
 using BusTicket.Entity;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,13 @@ namespace BusTicket.Data.Concreate.EfCore
             {
                 return _context as Context_BusTicket;
             }
+        }
+
+        public async Task<Customer> GetCustomerByUserNameAsync(string userName)
+        {
+            var customer = await Context.Customers.Where(e => e.UserName == userName).FirstOrDefaultAsync();
+
+            return customer;
         }
 
     }
