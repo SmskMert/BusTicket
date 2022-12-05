@@ -21,5 +21,9 @@ namespace BusTicket.Business.Abstract
 
         Task<Ticket> GetTicketWithTrip(int id);
 
+
+        Task<List<Ticket>> GetTicketsByCustomerIdAsync(int id);
+        Task<List<Ticket>> GetTicketsByPnrAsync(string pnr);
+
     }
 }

@@ -20,9 +20,23 @@ namespace BusTicket.Web.Controllers
         public async Task<IActionResult> Index()
         {
             var midlines = await _midlineService.GetAllAsync();
+            List<string> startingPoints = new List<string>(); 
+            List<string> destinations = new List<string>();
+            foreach (var midline in midlines)
+            {
+                if (!startingPoints.Contains(midline.StartingPoint))
+                {
+                    startingPoints.Add(midline.StartingPoint);
+                }
+                if (!destinations.Contains(midline.Destination))
+                {
+                    destinations.Add(midline.Destination);
+                }
+            };
             var tripSearchModel = new TripSearchModel()
             {
-                MidLines = midlines
+                StartingPoints= startingPoints,
+                Destinations = destinations
             };
             return View(tripSearchModel);
         }
@@ -38,7 +52,24 @@ namespace BusTicket.Web.Controllers
             else
             {
                 var midlines = await _midlineService.GetAllAsync();
-                SearchModel.MidLines = midlines;
+                List<string> startingPoints = new List<string>();
+                List<string> destinations = new List<string>();
+                foreach (var midline in midlines)
+                {
+                    if (!startingPoints.Contains(midline.StartingPoint))
+                    {
+                        startingPoints.Add(midline.StartingPoint);
+                    }
+                    if (!destinations.Contains(midline.Destination))
+                    {
+                        destinations.Add(midline.Destination);
+                    }
+                };
+                var tripSearchModel = new TripSearchModel()
+                {
+                    StartingPoints = startingPoints,
+                    Destinations = destinations
+                };
             }
             return View(SearchModel);
         }

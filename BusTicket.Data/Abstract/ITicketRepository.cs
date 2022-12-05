@@ -10,6 +10,8 @@ namespace BusTicket.Data.Abstract
     public interface ITicketRepository : IRepository<Ticket>
     {
         Task<Ticket> GetTicketWithTrip(int id);
-      
+
+        Task<List<Ticket>> GetTicketsByCustomerIdAsync(int id);
+        Task<List<Ticket>> GetTicketsByPnrAsync(string pnr);
     }
 }

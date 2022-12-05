@@ -37,6 +37,16 @@ namespace BusTicket.Business.Concreate
             return await _ticketRepository.GetByIdAsync(id);
         }
 
+        public async Task<List<Ticket>> GetTicketsByCustomerIdAsync(int id)
+        {
+            return await _ticketRepository.GetTicketsByCustomerIdAsync(id);
+        }
+
+        public async Task<List<Ticket>> GetTicketsByPnrAsync(string pnr)
+        {
+            return await _ticketRepository.GetTicketsByPnrAsync(pnr);
+        }
+
         public async Task<Ticket> GetTicketWithTrip(int id)
         {
             return await _ticketRepository.GetTicketWithTrip(id);

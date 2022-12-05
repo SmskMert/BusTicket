@@ -56,9 +56,36 @@
 
                 <td>
                     <div>
-                            <a asp-controller="Operator" asp-action="LineDetails" asp-route-id=@line.Id class="btn btn-outline-primary">Details</a>
-                        <a asp-controller="Operator" asp-action="DeleteRole" asp-route-id=@line.Id class="btn btn-outline-warning">Update</a>
-                        <a asp-controller="Operator" asp-action="DeleteRole" asp-route-id=@line.Id class="btn btn-outline-danger">Delete</a>
+                        <a asp-controller="Operator" asp-action="LineDetails" asp-route-id=@line.Id class="btn btn-outline-primary">Details</a>
+
+                        @*<a asp-controller="Operator" asp-action="UpdateLine" asp-route-id=@line.Id class="btn btn-outline-warning">Update</a>*@
+
+
+
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#lineDetailModal_@line.Id">
+                            Delete
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="lineDetailModal_@line.Id" tabindex="-1" aria-labelledby="lineDetailModal_@line.Id" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Warning!</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        The Line @line.StartingPoint - @line.Destination will be permanantly deleted. Are you sure to delete ?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <a asp-controller="Operator" asp-action="DeleteLine" asp-route-id=@line.Id class="btn btn-danger">Yes</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </td>
             </tr>

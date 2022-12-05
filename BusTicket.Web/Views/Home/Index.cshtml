@@ -22,12 +22,12 @@
             <div class="col-md-3 p-0">
                 <div class="input-group mt-5">
                     <label class="input-group-text" for="inputGroupSelect01">ORIGIN</label>
-                    @*<input asp-for="Origin" type="text" class="form-control" placeholder="From..">*@
+                    
                     <select asp-for="Origin" class="form-select" id="inputGroupSelect01">
                         <option selected disabled hidden>From..</option>
-                        @foreach (var midLine in Model.MidLines)
+                        @foreach (var startingPoint in Model.StartingPoints)
                         {
-                            <option value=@midLine.StartingPoint>@midLine.StartingPoint</option>
+                            <option value=@startingPoint>@startingPoint</option>
                         }
                     </select>
                 </div>
@@ -37,12 +37,11 @@
             <div class="col-md-3 ps-3 pe-0">
                 <div class="input-group mt-5">
                     <label class="input-group-text" for="inputGroupSelect02">DESTINATION</label>
-                    @*<input asp-for="Destination" type="text" class="form-control" placeholder="To..">*@
                     <select asp-for="Destination" class="form-select" id="inputGroupSelect02">
                         <option selected disabled hidden>To..</option>
-                        @foreach (var midLine in Model.MidLines)
+                        @foreach (var destination in Model.Destinations)
                         {
-                            <option value=@midLine.Destination>@midLine.Destination</option>
+                            <option value=@destination>@destination</option>
                         }
                     </select>
                 </div>

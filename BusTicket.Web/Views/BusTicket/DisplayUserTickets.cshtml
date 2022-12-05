@@ -1,0 +1,66 @@
+﻿@model List<CombinedTicketModel>
+
+@section DataTableScriptCDN{
+    @await Html.PartialAsync("_DataTableScriptCDNPartial")
+}
+
+@section DataTableCssCDN{
+    @await Html.PartialAsync("_DataTableCssCDNPartial")
+}
+
+<div class="d-flex justify-content-between align-items-center">
+    <div class="display-6 text-primary ms-2 text-center">
+        Ticket List
+    </div>
+    <div>
+        <a asp-controller="Admin" asp-action="CreateUser" class="btn btn-primary">CreateUser</a>
+    </div>
+</div>
+<hr>
+
+<table id="userTable_id" class="display">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Pnr No</th>
+            <th>Seat No</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Date</th>
+            <th>Departure</th>
+            <th>Arrival</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            var i = 1;
+        }
+        @foreach (var combinedTicketModel in Model)
+        {
+            <tr>
+                <td>@i</td>
+                <td>@combinedTicketModel.Tickets.First().PnrNo</td>
+                <td>@combinedTicketModel.Tickets.First().SeatNo</td>
+                <td>@combinedTicketModel.Tickets.First().Trip.MidLine.StartingPoint</td>
+                <td>@combinedTicketModel.Tickets.Last().Trip.MidLine.Destination</td>
+                <td>@combinedTicketModel.Tickets.Last().Trip.ScheduleDate</td>
+                <td>@combinedTicketModel.Tickets.First().Trip.DepartureTime</td>
+                <td>@combinedTicketModel.Tickets.Last().Trip.ArrivalTime</td>
+                
+
+                <td>
+                    <div>
+                       
+                        <a class="btn btn-sm btn-outline-warning" asp-controller="BusTicket" asp-action="TicketDetails" asp-route-pnr=@combinedTicketModel.Tickets.First().PnrNo>Ticket Details</a>
+                        
+                    </div>
+                </td>
+
+            </tr>
+            i++;
+        }
+    </tbody>
+</table>
+
+

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Data\\BusTicket.Data.csproj": {}
+    "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Data\\BusTicket.Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Data\\BusTicket.Data.csproj": {
+    "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Data\\BusTicket.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Data\\BusTicket.Data.csproj",
+        "projectUniqueName": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Data\\BusTicket.Data.csproj",
         "projectName": "BusTicket.Data",
-        "projectPath": "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Data\\BusTicket.Data.csproj",
-        "packagesPath": "C:\\Users\\ÖĞLE\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Data\\obj\\",
+        "projectPath": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Data\\BusTicket.Data.csproj",
+        "packagesPath": "C:\\Users\\Mert\\.nuget\\packages\\",
+        "outputPath": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ÖĞLE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Mert\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Entity\\BusTicket.Entity.csproj": {
-                "projectPath": "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Entity\\BusTicket.Entity.csproj"
+              "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Entity\\BusTicket.Entity.csproj": {
+                "projectPath": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Entity\\BusTicket.Entity.csproj"
               }
             }
           }
@@ -79,17 +79,17 @@
         }
       }
     },
-    "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Entity\\BusTicket.Entity.csproj": {
+    "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Entity\\BusTicket.Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Entity\\BusTicket.Entity.csproj",
+        "projectUniqueName": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Entity\\BusTicket.Entity.csproj",
         "projectName": "BusTicket.Entity",
-        "projectPath": "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Entity\\BusTicket.Entity.csproj",
-        "packagesPath": "C:\\Users\\ÖĞLE\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Entity\\obj\\",
+        "projectPath": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Entity\\BusTicket.Entity.csproj",
+        "packagesPath": "C:\\Users\\Mert\\.nuget\\packages\\",
+        "outputPath": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Entity\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ÖĞLE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Mert\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

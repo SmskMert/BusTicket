@@ -6,9 +6,12 @@ using Iyzipay;
 using Iyzipay.Model;
 using Iyzipay.Model.V2.Subscription;
 using Iyzipay.Request;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Options;
+using System.Linq;
+using System.Net.Sockets;
 using System.Reflection;
 using System.Xml.Linq;
 using Options = Iyzipay.Options;
@@ -225,7 +228,7 @@ namespace BusTicket.Web.Controllers
 
             #region IyzicoPayment
             var price = passangerDetails.TotalPrice.ToString();
-            price = price.Remove(price.Length-2);
+            price = price.Remove(price.Length - 2);
 
             CreateCheckoutFormInitializeRequest request = new CreateCheckoutFormInitializeRequest();
             request.Locale = Locale.TR.ToString();
@@ -235,7 +238,7 @@ namespace BusTicket.Web.Controllers
             request.Currency = Currency.TRY.ToString();
             request.BasketId = "B67832";
             request.PaymentGroup = PaymentGroup.PRODUCT.ToString();
-            request.CallbackUrl = $"https://localhost:7104/BusTicket/DisplayTicket?customerId={customer.Id.ToString()}&tripId={passangerDetails.TripId}&selectedSeatNo={passangerDetails.SelectedSeatNo}" ; 
+            request.CallbackUrl = $"https://localhost:7104/BusTicket/DisplayTicket?customerId={customer.Id.ToString()}&tripId={passangerDetails.TripId}&selectedSeatNo={passangerDetails.SelectedSeatNo}";
 
             List<int> enabledInstallments = new List<int>();
             enabledInstallments.Add(2);
@@ -321,6 +324,13 @@ namespace BusTicket.Web.Controllers
 
             var ids = tripId.Split('-');
 
+            var pnrForTickets = Jobs.PnrNoGenerator();
+            List<Ticket> allTickets = await _ticketService.GetAllAsync();
+            foreach (var ticket in allTickets)
+            {
+                pnrForTickets = ticket.PnrNo == pnrForTickets ? Jobs.PnrNoGenerator() : pnrForTickets;
+            }
+
             displayTicket.Tickets = new List<Ticket>();
             foreach (var id in ids)
             {
@@ -328,7 +338,8 @@ namespace BusTicket.Web.Controllers
                 {
                     SeatNo = int.Parse(selectedSeatNo),
                     TripId = int.Parse(id),
-                    CustomerId = customer.Id
+                    CustomerId = customer.Id,
+                    PnrNo = pnrForTickets
                 };
                 await _ticketService.CreateAsync(ticket);
                 ticket = await _ticketService.GetTicketWithTrip(ticket.Id);
@@ -339,5 +350,49 @@ namespace BusTicket.Web.Controllers
 
             return View(displayTicket);
         }
+
+        [Authorize]
+        public async Task<IActionResult> DisplayUserTickets()
+        {
+            var userName = User.Identity.Name;
+            var usersCustomerId = await _customerService.GetCustomerByUserNameAsync(userName);
+            var usersTickets = await _ticketService.GetTicketsByCustomerIdAsync(usersCustomerId.Id);
+
+            var pnrNos = new List<string>();
+            usersTickets.ForEach(ticket =>
+            {
+                if (!pnrNos.Contains(ticket.PnrNo))
+                {
+                    pnrNos.Add(ticket.PnrNo);
+                }
+            });
+
+            var combinedTicketModels = new List<CombinedTicketModel>();
+            foreach (var pnr in pnrNos)
+            {
+                CombinedTicketModel combinedTicketModel = new();
+                foreach (var usersTicket in usersTickets)
+                {
+                    if (usersTicket.PnrNo == pnr)
+                    {
+                        combinedTicketModel.Tickets.Add(usersTicket);
+                    }
+                }
+                combinedTicketModels.Add(combinedTicketModel);
+            }
+
+            return View(combinedTicketModels);
+        }
+        public async Task<IActionResult> TicketDetails(string pnr)
+        {
+            var combinedTickets = await _ticketService.GetTicketsByPnrAsync(pnr);
+            DisplayTicketModel displayTicket = new()
+            {
+                Tickets = combinedTickets,
+                Customer = combinedTickets.First().Customer
+            };
+            return View("DisplayTicket", displayTicket);
+        }
     }
+
 }

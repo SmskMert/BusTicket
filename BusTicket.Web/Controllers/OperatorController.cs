@@ -34,6 +34,30 @@ namespace BusTicket.Web.Controllers
         //    return View(trips);
         //}
 
+        public async Task<IActionResult> UpdateLine(int id)
+        {
+            Line line = await _LineService.GetLineWithDetailsAsync(id);
+            List<MidLine> midlines = line.MidLines;
+            List<Trip> trips = new();
+            foreach (MidLine midline in midlines)
+            {
+                trips.Add(midline.Trips.First());
+            };
+            var tripDetail = trips.First().TripDetail;
+            UpdateLineModel updateLineModel = new()
+            {
+                Buses = await _BusService.GetAllAsync(),
+                Drivers = await _DriverService.GetAllAsync(),
+                Date = trips.First().ScheduleDate,
+                DriverId = tripDetail.DriverId,
+                BusId = tripDetail.BusId,
+                Stops = new List<string>(),
+                Time = new List<string>(),
+                Fares = new List<string>(),
+                StopTimeFares = new List<StopTimeFareModel>()
+            };
+            return View(updateLineModel);
+        }
         public async Task<IActionResult> LineList()
         {
             var lines = await _LineService.GetLinesWithTripsAsync();
@@ -134,6 +158,25 @@ namespace BusTicket.Web.Controllers
             }
 
 
+            return RedirectToAction("LineList");
+        }
+
+        public async Task<IActionResult> DeleteLine(int id)
+        {
+            var lineToBeDeleted = await _LineService.GetLineWithDetailsAsync(id);
+            List<MidLine> midlinesToBeDeleted = lineToBeDeleted.MidLines;
+            var tripsToBeDeleted = lineToBeDeleted.MidLines.Select(x => x.Trips[0]);
+            var tripDetail = tripsToBeDeleted.First().TripDetail;
+            do
+            {
+                await _MidlineService.DeleteAsync(midlinesToBeDeleted.First());
+            } while (midlinesToBeDeleted.Count > 0);
+            //do
+            //{
+            //    await _TripService.DeleteAsync(tripsToBeDeleted.First());
+            //} while (midlinesToBeDeleted.Count > 0);
+            await _LineService.DeleteAsync(lineToBeDeleted);
+            await _TripDetailService.DeleteAsync(tripDetail);
             return RedirectToAction("LineList");
         }
         #endregion

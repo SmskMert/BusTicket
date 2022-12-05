@@ -28,5 +28,13 @@ namespace BusTicket.Core
             };
             return JsonConvert.SerializeObject(msg);
         }
+
+        public static string PnrNoGenerator()
+        {
+            Random rnd = new Random();
+            int num = rnd.Next(10000, 99999);
+            string pnrNo = num.ToString();
+            return pnrNo;
+        }
     }
 }

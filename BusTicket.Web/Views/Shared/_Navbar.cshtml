@@ -21,7 +21,7 @@
                             }
                             @if (User.IsInRole("Customer"))
                             {
-                            <li><a class="dropdown-item" asp-controller="Home" asp-action="Index">Display Tickets</a></li>
+                                <li><a class="dropdown-item" asp-controller="BusTicket" asp-action="DisplayUserTickets">Display Tickets</a></li>
                             }
                               @if (User.IsInRole("Operator"))
                             {

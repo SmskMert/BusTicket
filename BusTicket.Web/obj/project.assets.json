@@ -1535,19 +1535,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ÖĞLE\\.nuget\\packages\\": {}
+    "C:\\Users\\Mert\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Web\\BusTicket.Web.csproj",
+      "projectUniqueName": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Web\\BusTicket.Web.csproj",
       "projectName": "BusTicket.Web",
-      "projectPath": "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Web\\BusTicket.Web.csproj",
-      "packagesPath": "C:\\Users\\ÖĞLE\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Web\\obj\\",
+      "projectPath": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Web\\BusTicket.Web.csproj",
+      "packagesPath": "C:\\Users\\Mert\\.nuget\\packages\\",
+      "outputPath": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Web\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ÖĞLE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Mert\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1561,11 +1561,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Business\\BusTicket.Business.csproj": {
-              "projectPath": "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Business\\BusTicket.Business.csproj"
+            "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Business\\BusTicket.Business.csproj": {
+              "projectPath": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Business\\BusTicket.Business.csproj"
             },
-            "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Core\\BusTicket.Core.csproj": {
-              "projectPath": "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Core\\BusTicket.Core.csproj"
+            "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Core\\BusTicket.Core.csproj": {
+              "projectPath": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Core\\BusTicket.Core.csproj"
             }
           }
         }

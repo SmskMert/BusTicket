@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Web\\BusTicket.Web.csproj": {}
+    "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Web\\BusTicket.Web.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Business\\BusTicket.Business.csproj": {
+    "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Business\\BusTicket.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Business\\BusTicket.Business.csproj",
+        "projectUniqueName": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Business\\BusTicket.Business.csproj",
         "projectName": "BusTicket.Business",
-        "projectPath": "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Business\\BusTicket.Business.csproj",
-        "packagesPath": "C:\\Users\\ÖĞLE\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Business\\obj\\",
+        "projectPath": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Business\\BusTicket.Business.csproj",
+        "packagesPath": "C:\\Users\\Mert\\.nuget\\packages\\",
+        "outputPath": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Business\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ÖĞLE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Mert\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,11 +28,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Data\\BusTicket.Data.csproj": {
-                "projectPath": "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Data\\BusTicket.Data.csproj"
+              "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Data\\BusTicket.Data.csproj": {
+                "projectPath": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Data\\BusTicket.Data.csproj"
               },
-              "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Entity\\BusTicket.Entity.csproj": {
-                "projectPath": "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Entity\\BusTicket.Entity.csproj"
+              "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Entity\\BusTicket.Entity.csproj": {
+                "projectPath": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Entity\\BusTicket.Entity.csproj"
               }
             }
           }
@@ -66,17 +66,17 @@
         }
       }
     },
-    "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Core\\BusTicket.Core.csproj": {
+    "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Core\\BusTicket.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Core\\BusTicket.Core.csproj",
+        "projectUniqueName": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Core\\BusTicket.Core.csproj",
         "projectName": "BusTicket.Core",
-        "projectPath": "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Core\\BusTicket.Core.csproj",
-        "packagesPath": "C:\\Users\\ÖĞLE\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Core\\obj\\",
+        "projectPath": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Core\\BusTicket.Core.csproj",
+        "packagesPath": "C:\\Users\\Mert\\.nuget\\packages\\",
+        "outputPath": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ÖĞLE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Mert\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -127,17 +127,17 @@
         }
       }
     },
-    "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Data\\BusTicket.Data.csproj": {
+    "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Data\\BusTicket.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Data\\BusTicket.Data.csproj",
+        "projectUniqueName": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Data\\BusTicket.Data.csproj",
         "projectName": "BusTicket.Data",
-        "projectPath": "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Data\\BusTicket.Data.csproj",
-        "packagesPath": "C:\\Users\\ÖĞLE\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Data\\obj\\",
+        "projectPath": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Data\\BusTicket.Data.csproj",
+        "packagesPath": "C:\\Users\\Mert\\.nuget\\packages\\",
+        "outputPath": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ÖĞLE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Mert\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -151,8 +151,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Entity\\BusTicket.Entity.csproj": {
-                "projectPath": "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Entity\\BusTicket.Entity.csproj"
+              "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Entity\\BusTicket.Entity.csproj": {
+                "projectPath": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Entity\\BusTicket.Entity.csproj"
               }
             }
           }
@@ -202,17 +202,17 @@
         }
       }
     },
-    "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Entity\\BusTicket.Entity.csproj": {
+    "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Entity\\BusTicket.Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Entity\\BusTicket.Entity.csproj",
+        "projectUniqueName": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Entity\\BusTicket.Entity.csproj",
         "projectName": "BusTicket.Entity",
-        "projectPath": "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Entity\\BusTicket.Entity.csproj",
-        "packagesPath": "C:\\Users\\ÖĞLE\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Entity\\obj\\",
+        "projectPath": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Entity\\BusTicket.Entity.csproj",
+        "packagesPath": "C:\\Users\\Mert\\.nuget\\packages\\",
+        "outputPath": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Entity\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ÖĞLE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Mert\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -257,17 +257,17 @@
         }
       }
     },
-    "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Web\\BusTicket.Web.csproj": {
+    "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Web\\BusTicket.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Web\\BusTicket.Web.csproj",
+        "projectUniqueName": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Web\\BusTicket.Web.csproj",
         "projectName": "BusTicket.Web",
-        "projectPath": "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Web\\BusTicket.Web.csproj",
-        "packagesPath": "C:\\Users\\ÖĞLE\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Web\\obj\\",
+        "projectPath": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Web\\BusTicket.Web.csproj",
+        "packagesPath": "C:\\Users\\Mert\\.nuget\\packages\\",
+        "outputPath": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Web\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ÖĞLE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Mert\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -281,11 +281,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Business\\BusTicket.Business.csproj": {
-                "projectPath": "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Business\\BusTicket.Business.csproj"
+              "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Business\\BusTicket.Business.csproj": {
+                "projectPath": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Business\\BusTicket.Business.csproj"
               },
-              "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Core\\BusTicket.Core.csproj": {
-                "projectPath": "C:\\Users\\ÖĞLE\\source\\repos\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Core\\BusTicket.Core.csproj"
+              "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Core\\BusTicket.Core.csproj": {
+                "projectPath": "D:\\05.Software Development\\04.BAU-BRIGHT\\02.ClonedRepo\\MertSimsek_Odevler\\_BusTicket\\BusTicket.Core\\BusTicket.Core.csproj"
               }
             }
           }

@@ -14,7 +14,7 @@
                 <p class="card-text"><Strong>Pnr No</Strong></p>
             </div>
             <div class="col-7 border">
-                <p class="card-text">Random PNR Method to be written</p>
+                <p class="card-text">@Model.Tickets.First().PnrNo</p>
             </div>
 
             <div class="col-4 border">
@@ -103,5 +103,9 @@
 <div class="row me-4">
     <div class="col text-end">
         <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Return Home Page</a>
+        @if (User.IsInRole("Customer"))
+        {
+        <a asp-controller="BusTicket" asp-action="DisplayUserTickets" class="btn btn-secondary">User's Tickets</a>
+        }
     </div>
 </div>

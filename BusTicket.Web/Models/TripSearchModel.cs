@@ -13,6 +13,7 @@ namespace BusTicket.Web.Models
 
         [Required(ErrorMessage = "Please Select a Date.")]
         public string? Date { get; set; }
-        public List<MidLine>? MidLines { get; set; } = null!;
+        public List<string>? StartingPoints { get; set; } = null!;
+        public List<string>? Destinations { get; set; } = null!;
     }
 }
