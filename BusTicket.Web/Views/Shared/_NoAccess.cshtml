@@ -1,0 +1,15 @@
+﻿@if (User.IsInRole("Operator"))
+{
+<div class="alert alert-danger text-center fs-5" role="alert">
+ Operator is not allowed to buy a ticket.
+</div>
+}
+
+
+@if (User.IsInRole("Admin"))
+{
+<div class="alert alert-danger text-center fs-5" role="alert">
+    Admin is not allowed to buy a ticket.
+</div>
+    
+}

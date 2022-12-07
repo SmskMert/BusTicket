@@ -189,38 +189,62 @@
 
 <script>
     let i = 1;
+    let stopTimeFares = [];
     const addStop = (x) => {
+        if (i > 1) {
+            var previousStopNo = i - 1;
+            for (let z = 0; z <= i - 2; z++) {
+                let elementId = z + 1;
+                stopTimeFares[(z)] = {
+                    stopName: document.getElementById(`stopName.${elementId}`).value,
+                    stopTime: document.getElementById(`stopTime.${elementId}`).value,
+                    stopFare: document.getElementById(`stopFare.${elementId}`).value
+                }
+            }
+            console.log(stopTimeFares);
+        }
+
+
         if (x != 1 && i == 1) {
             i = x;
         }
 
         const midStopHTML = `<div class="row my-2" id="stop.${i}">
-                                                    <div class="col-md-2 d-flex align-items-center">
-                                                            <p class="m-0">${i} .Stop</p>
-                                                    </div>
-                                                    <div class="col-md-3">
-                                                        <input type="text" class="form-control" placeholder="provide a stop" name="Stops" />
-                                                    </div>
-                                                    <div class="col-md-3">
-                                                        <input type="time" class="form-control" name="Time"  />
-                                                    </div>
-                                                    <div class="col-md-2">
-                                                        <input type="text" class="form-control" name="Fares"  />
-                                                    </div>
-                                                    <div class="col-md-2 d-flex align-items-center">
-                                                        <div class="d-grid col">
-                                                                    <button id="removeStopButton.${i}" type="button" class="btn btn-sm btn-outline-danger" onclick="removeStop(${i})">Remove</button>
-                                                        </div>
-                                                    </div>
-                                    </div>`
+                                                                    <div class="col-md-2 d-flex align-items-center">
+                                                                            <p class="m-0">${i} .Stop</p>
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <input type="text" id="stopName.${i}" class="form-control" placeholder="provide a stop" name="Stops" />
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <input id="stopTime.${i}" type="time" class="form-control" name="Time"  />
+                                                                    </div>
+                                                                    <div class="col-md-2">
+                                                                            <input type="text" id="stopFare.${i}" class="form-control" name="Fares"  />
+                                                                    </div>
+                                                                    <div class="col-md-2 d-flex align-items-center">
+                                                                        <div class="d-grid col">
+                                                                                    <button id="removeStopButton.${i}" type="button" class="btn btn-sm btn-outline-danger" onclick="removeStop(${i})">Remove</button>
+                                                                        </div>
+                                                                    </div>
+                                                    </div>`
         const midStops = document.getElementById("midStops");
         midStops.innerHTML = midStops.innerHTML + midStopHTML;
         if (i != 1) {
             let removeButtonId = i - 1;
             document.getElementById(`removeStopButton.${removeButtonId}`).disabled = true;
         }
+        if (stopTimeFares.length >0){
+            for(let q = 0; q < stopTimeFares.length; q++){
+                let idNo = q+1;
+                document.getElementById(`stopName.${idNo}`).value = stopTimeFares[q].stopName;
+                document.getElementById(`stopTime.${idNo}`).value = stopTimeFares[q].stopTime;
+                document.getElementById(`stopFare.${idNo}`).value = stopTimeFares[q].stopFare;
+            }
+        }
         i += 1;
         console.log(i);
+        stopTimeFares = [];
     }
 
 
@@ -234,6 +258,7 @@
         i -= 1;
         console.log(i);
     }
+
 
     const busSelect = document.getElementById("busSelect");
 

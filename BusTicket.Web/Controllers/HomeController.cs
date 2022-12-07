@@ -44,6 +44,10 @@ namespace BusTicket.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(TripSearchModel SearchModel)
         {
+            if (User.IsInRole("Operator") || User.IsInRole("Admin"))
+            {
+                return View("_NoAccess");
+            }
             if (ModelState.IsValid)
             {
                 SearchModel.Date = Jobs.UpdateDateFormat(SearchModel.Date);
@@ -65,11 +69,10 @@ namespace BusTicket.Web.Controllers
                         destinations.Add(midline.Destination);
                     }
                 };
-                var tripSearchModel = new TripSearchModel()
-                {
-                    StartingPoints = startingPoints,
-                    Destinations = destinations
-                };
+
+                SearchModel.StartingPoints = startingPoints;
+                SearchModel.Destinations = destinations;
+                
             }
             return View(SearchModel);
         }

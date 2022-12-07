@@ -5,6 +5,7 @@ namespace BusTicket.Web.Models
 {
     public class UpdateLineModel
     {
+        public int LineId { get; set; }
         public List<string> Stops { get; set; } = null!;
         public List<string> Time { get; set; } = null!;
         public List<string> Fares { get; set; } = null!;

@@ -18,6 +18,15 @@ namespace BusTicket.Core
             return day + "." + month + "." + year;
         }
 
+        public static string UpdateDateFormatToInput(string Date)
+        {
+            var dateArray = Date.Split(".");
+            var day = dateArray[0];
+            var month = dateArray[1];
+            var year = dateArray[2];
+            return year + "-" + month + "-" + day;
+        }
+
         public static string CreateMessage(string title, string message, string alertType)
         {
             var msg = new AlertMessage()

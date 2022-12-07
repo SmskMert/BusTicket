@@ -46,9 +46,10 @@ namespace BusTicket.Web.Controllers
             var tripDetail = trips.First().TripDetail;
             UpdateLineModel updateLineModel = new()
             {
+                LineId = line.Id,
                 Buses = await _BusService.GetAllAsync(),
                 Drivers = await _DriverService.GetAllAsync(),
-                Date = trips.First().ScheduleDate,
+                Date = Jobs.UpdateDateFormatToInput(trips.First().ScheduleDate),
                 DriverId = tripDetail.DriverId,
                 BusId = tripDetail.BusId,
                 Stops = new List<string>(),
@@ -56,7 +57,131 @@ namespace BusTicket.Web.Controllers
                 Fares = new List<string>(),
                 StopTimeFares = new List<StopTimeFareModel>()
             };
+            for (int i = 0; i < midlines.Count; i++)
+            {
+                StopTimeFareModel stopTimeFare = new()
+                {
+                    Stop = midlines[i].StartingPoint,
+                    Time = midlines[i].Trips.First().DepartureTime,
+                    Fare = (midlines[i].Trips.First().FareAmount).ToString()
+                };
+                updateLineModel.StopTimeFares.Add(stopTimeFare);
+                if (i == midlines.Count - 1)
+                {
+                    StopTimeFareModel stopTimeFareLast = new()
+                    {
+                        Stop = midlines[i].Destination,
+                        Time = midlines[i].Trips.First().ArrivalTime,
+                    };
+                    updateLineModel.StopTimeFares.Add(stopTimeFareLast);
+                }
+            };
             return View(updateLineModel);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UpdateLine(UpdateLineModel updateLineModel)
+        {
+
+            if (updateLineModel.Stops.Contains(null) || updateLineModel.Time.Contains(null) || updateLineModel.Fares.Contains(null) || updateLineModel.Stops.Contains("") || updateLineModel.Time.Contains("") || updateLineModel.Fares.Contains("") || !ModelState.IsValid)
+            {
+                if (updateLineModel.Stops.Contains(null) || updateLineModel.Stops.Contains(""))
+                {
+                    ModelState.AddModelError("", "All stops must be filled");
+                }
+                if (updateLineModel.Time.Contains(null) || updateLineModel.Time.Contains(""))
+                {
+                    ModelState.AddModelError("", "All Time inputs must be filled");
+                }
+                if (updateLineModel.Fares.Contains(null) || updateLineModel.Fares.Contains(""))
+                {
+                    ModelState.AddModelError("", "All Fares inputs must be filled");
+                }
+                var stopTimeFares = new List<StopTimeFareModel>();
+                for (int i = 0; i < updateLineModel.Stops.Count; i++)
+                {
+                    var stopTimeFare = new StopTimeFareModel()
+                    {
+                        Stop = updateLineModel.Stops[i],
+                        Time = updateLineModel.Time[i],
+                        Fare = i == updateLineModel.Stops.Count - 1 ? null : updateLineModel.Fares[i]
+                    };
+                    stopTimeFares.Add(stopTimeFare);
+                }
+                updateLineModel.StopTimeFares = stopTimeFares;
+                updateLineModel.Drivers = await _DriverService.GetAllAsync();
+                updateLineModel.Buses = await _BusService.GetAllAsync();
+                return View(updateLineModel);
+            }
+
+            var line = await _LineService.GetLineWithDetailsAsync(updateLineModel.LineId);
+            var midlines = line.MidLines;
+            List<Trip> trips = new();
+            foreach (var midline in midlines)
+            {
+                trips.Add(midline.Trips.First());
+            }
+            var tripDetail = trips.First().TripDetail;
+
+            tripDetail.DriverId = (int)updateLineModel.DriverId;
+            tripDetail.BusId = (int)updateLineModel.BusId;
+
+            if (updateLineModel.Stops.Count == midlines.Count + 1)
+            {
+                line.StartingPoint = updateLineModel.Stops.First();
+                line.Destination = updateLineModel.Stops.Last();
+                await _LineService.UpdateAsync(line);
+                for (int i = 0; i < midlines.Count; i++)
+                {
+                    midlines[i].StartingPoint = updateLineModel.Stops[i];
+                    midlines[i].Destination = updateLineModel.Stops[(i + 1)];
+                    await _MidlineService.UpdateAsync(midlines[i]);
+
+                    trips[i].DepartureTime = updateLineModel.Time[i];
+                    trips[i].ArrivalTime = updateLineModel.Time[i + 1];
+                    trips[i].ScheduleDate = Jobs.UpdateDateFormat(updateLineModel.Date);
+                    trips[i].FareAmount = decimal.Parse(updateLineModel.Fares[i]);
+                    await _TripService.UpdateAsync(trips[i]);
+
+                }
+            }
+            else
+            {
+                do
+                {
+                    await _MidlineService.DeleteAsync(midlines.First());
+                } while (midlines.Count > 0);
+
+                for (int i = 0; i < (updateLineModel.Stops.Count - 1); i++)
+                {
+                    MidLine midline = new()
+                    {
+                        MidLineOrder = i + 1,
+                        StartingPoint = updateLineModel.Stops[i],
+                        Destination = updateLineModel.Stops[i + 1],
+                        LineId = line.Id
+                    };
+                    await _MidlineService.CreateAsync(midline);
+                }
+
+                line = await _LineService.GetLineWithDetailsAsync(line.Id);
+
+                for (int x = 0; x < line.MidLines.Count; x++)
+                {
+                    Trip trip = new()
+                    {
+                        MidLineId = line.MidLines[x].Id,
+                        ScheduleDate = Jobs.UpdateDateFormat(updateLineModel.Date),
+                        DepartureTime = updateLineModel.Time[x],
+                        ArrivalTime = updateLineModel.Time[x + 1],
+                        FareAmount = decimal.Parse(updateLineModel.Fares[x]),
+                        TripDetailId = tripDetail.Id
+                    };
+                    await _TripService.CreateAsync(trip);
+                }
+
+            }
+                return RedirectToAction("LineList");
         }
         public async Task<IActionResult> LineList()
         {
@@ -82,7 +207,7 @@ namespace BusTicket.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateLine(CreateLineModel createLine)
         {
-            if (createLine.Stops.Contains(null) || createLine.Time.Contains(null) || createLine.Fares.Contains(null))
+            if (createLine.Stops.Contains(null) || createLine.Time.Contains(null) || createLine.Fares.Contains(null) || !ModelState.IsValid)
             {
                 if (createLine.Stops.Contains(null))
                 {

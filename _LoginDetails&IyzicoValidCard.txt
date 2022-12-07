@@ -1,0 +1,13 @@
+Name:CustomerUser
+Password: Qwe123.
+Role: Customer
+
+Name:Operator
+Password: Qwe123.
+Role: Operator
+
+Name:Admin
+Password: Qwe123.
+Role: Admin
+
+Iyzico Valid Card No : 4603450000000000 DenizBank Visa(Credit)
