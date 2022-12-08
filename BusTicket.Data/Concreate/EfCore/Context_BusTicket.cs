@@ -29,11 +29,10 @@ namespace BusTicket.Data.Concreate.EfCore
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+ modelBuilder.Entity<Bus>().HasData(
+                new Bus() { Id = 1, Capacity = 12, HasWifi = true },
 
-            modelBuilder.Entity<Bus>().HasData(
-                new Bus() { Id = 1, Capacity = 10, HasWifi = true },
-
-                 new Bus() { Id = 2, Capacity = 15, HasUSB = true },
+                 new Bus() { Id = 2, Capacity = 16, HasUSB = true },
 
                  new Bus() { Id = 3, Capacity = 20, HasWifi = true, HasSeatScreen = true, HasUSB = true }
             );
@@ -120,6 +119,7 @@ namespace BusTicket.Data.Concreate.EfCore
               new TripDetail() { Id = 2, BusId = 1, DriverId = 1 },
               new TripDetail() { Id = 3, BusId = 1, DriverId = 1 }
               );
+           
         }
     }
 }

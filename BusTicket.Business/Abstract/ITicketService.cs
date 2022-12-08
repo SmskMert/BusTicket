@@ -23,6 +23,7 @@ namespace BusTicket.Business.Abstract
 
 
         Task<List<Ticket>> GetTicketsByCustomerIdAsync(int id);
+        Task<List<Ticket>> GetTicketsByUserNameAsync(string userName);
         Task<List<Ticket>> GetTicketsByPnrAsync(string pnr);
 
     }

@@ -5,6 +5,7 @@ Role: Customer
 Name:Operator
 Password: Qwe123.
 Role: Operator
+(Operator can see all the lines. To see all the available lines please login as operator.)
 
 Name:Admin
 Password: Qwe123.

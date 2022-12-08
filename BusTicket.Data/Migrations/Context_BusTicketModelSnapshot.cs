@@ -38,32 +38,6 @@ namespace BusTicket.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Buses");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Capacity = 10,
-                            HasSeatScreen = false,
-                            HasUSB = false,
-                            HasWifi = true
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Capacity = 15,
-                            HasSeatScreen = false,
-                            HasUSB = true,
-                            HasWifi = false
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Capacity = 20,
-                            HasSeatScreen = true,
-                            HasUSB = true,
-                            HasWifi = true
-                        });
                 });
 
             modelBuilder.Entity("BusTicket.Entity.Company", b =>
@@ -78,23 +52,6 @@ namespace BusTicket.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Companies");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Metro Turizm"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "Kamil Koç"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "Lüks Artvin"
-                        });
                 });
 
             modelBuilder.Entity("BusTicket.Entity.Customer", b =>
@@ -127,48 +84,6 @@ namespace BusTicket.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Customers");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Age = "26",
-                            Contact = "05556667770",
-                            Email = "mertsimsek@gmail.com",
-                            FName = "Mert",
-                            Gender = "Male",
-                            LName = "Simsek"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Age = "27",
-                            Contact = "05556667771",
-                            Email = "cansunur@gmail.com",
-                            FName = "Cansu Nur",
-                            Gender = "Female",
-                            LName = "Ürek"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Age = "35",
-                            Contact = "05556667772",
-                            Email = "ali@gmail.com",
-                            FName = "Ali",
-                            Gender = "Male",
-                            LName = "Cesur"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Age = "40",
-                            Contact = "05556667773",
-                            Email = "ayse@gmail.com",
-                            FName = "Ayşe",
-                            Gender = "Female",
-                            LName = "Yavaş"
-                        });
                 });
 
             modelBuilder.Entity("BusTicket.Entity.Driver", b =>
@@ -186,26 +101,6 @@ namespace BusTicket.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Drivers");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Contact = "+905556668880",
-                            Name = "Niyazi Hızlı"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Contact = "+905556668881",
-                            Name = "Murat Seyrek"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Contact = "+905556668882",
-                            Name = "Berk Entel"
-                        });
                 });
 
             modelBuilder.Entity("BusTicket.Entity.Line", b =>
@@ -223,26 +118,6 @@ namespace BusTicket.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Lines");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Destination = "Adana",
-                            StartingPoint = "İstanbul"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Destination = "Hatay",
-                            StartingPoint = "Rize"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Destination = "Antalya",
-                            StartingPoint = "Sinop"
-                        });
                 });
 
             modelBuilder.Entity("BusTicket.Entity.MidLine", b =>
@@ -268,120 +143,6 @@ namespace BusTicket.Data.Migrations
                     b.HasIndex("LineId");
 
                     b.ToTable("MidLines");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Destination = "Gebze",
-                            LineId = 1,
-                            MidLineOrder = 1,
-                            StartingPoint = "İstanbul"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Destination = "Sakarya",
-                            LineId = 1,
-                            MidLineOrder = 2,
-                            StartingPoint = "Gebze"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Destination = "Ankara",
-                            LineId = 1,
-                            MidLineOrder = 3,
-                            StartingPoint = "Sakarya"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Destination = "Adana",
-                            LineId = 1,
-                            MidLineOrder = 4,
-                            StartingPoint = "Ankara"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Destination = "Trabzon",
-                            LineId = 2,
-                            MidLineOrder = 1,
-                            StartingPoint = "Rize"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Destination = "Erzincan",
-                            LineId = 2,
-                            MidLineOrder = 2,
-                            StartingPoint = "Trabzon"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Destination = "Sivas",
-                            LineId = 2,
-                            MidLineOrder = 3,
-                            StartingPoint = "Erzincan"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            Destination = "Gaziantep",
-                            LineId = 2,
-                            MidLineOrder = 4,
-                            StartingPoint = "Sivas"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            Destination = "Hatay",
-                            LineId = 2,
-                            MidLineOrder = 5,
-                            StartingPoint = "Gaziantep"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            Destination = "Kastamonu",
-                            LineId = 3,
-                            MidLineOrder = 1,
-                            StartingPoint = "Sinop"
-                        },
-                        new
-                        {
-                            Id = 11,
-                            Destination = "Karabük",
-                            LineId = 3,
-                            MidLineOrder = 2,
-                            StartingPoint = "Kastamonu"
-                        },
-                        new
-                        {
-                            Id = 12,
-                            Destination = "Afyon",
-                            LineId = 3,
-                            MidLineOrder = 3,
-                            StartingPoint = "Karabük"
-                        },
-                        new
-                        {
-                            Id = 13,
-                            Destination = "Burdur",
-                            LineId = 3,
-                            MidLineOrder = 4,
-                            StartingPoint = "Afyon"
-                        },
-                        new
-                        {
-                            Id = 14,
-                            Destination = "Antalya",
-                            LineId = 3,
-                            MidLineOrder = 5,
-                            StartingPoint = "Burdur"
-                        });
                 });
 
             modelBuilder.Entity("BusTicket.Entity.Payment", b =>
@@ -416,6 +177,9 @@ namespace BusTicket.Data.Migrations
                     b.Property<int>("TripId")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("UserName")
+                        .HasColumnType("TEXT");
+
                     b.HasKey("Id");
 
                     b.HasIndex("CustomerId");
@@ -437,7 +201,7 @@ namespace BusTicket.Data.Migrations
                     b.Property<string>("DepartureTime")
                         .HasColumnType("TEXT");
 
-                    b.Property<decimal?>("FareAmount")
+                    b.Property<decimal>("FareAmount")
                         .HasColumnType("TEXT");
 
                     b.Property<int>("MidLineId")
@@ -459,147 +223,6 @@ namespace BusTicket.Data.Migrations
                     b.HasIndex("TripDetailId");
 
                     b.ToTable("Trips");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            ArrivalTime = "14:00",
-                            DepartureTime = "11:30",
-                            FareAmount = 50m,
-                            MidLineId = 1,
-                            ScheduleDate = "01.11.2022",
-                            TripDetailId = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            ArrivalTime = "15:20",
-                            DepartureTime = "14:00",
-                            MidLineId = 2,
-                            ScheduleDate = "01.11.2022",
-                            TripDetailId = 1
-                        },
-                        new
-                        {
-                            Id = 3,
-                            ArrivalTime = "21:30",
-                            DepartureTime = "15:20",
-                            FareAmount = 120m,
-                            MidLineId = 3,
-                            ScheduleDate = "01.11.2022",
-                            TripDetailId = 1
-                        },
-                        new
-                        {
-                            Id = 4,
-                            ArrivalTime = "21:30",
-                            DepartureTime = "15:20",
-                            FareAmount = 150m,
-                            MidLineId = 4,
-                            ScheduleDate = "01.11.2022",
-                            TripDetailId = 1
-                        },
-                        new
-                        {
-                            Id = 5,
-                            ArrivalTime = "21:30",
-                            DepartureTime = "15:20",
-                            FareAmount = 70m,
-                            MidLineId = 5,
-                            ScheduleDate = "01.11.2022",
-                            TripDetailId = 1
-                        },
-                        new
-                        {
-                            Id = 6,
-                            ArrivalTime = "21:30",
-                            DepartureTime = "15:20",
-                            FareAmount = 150m,
-                            MidLineId = 6,
-                            ScheduleDate = "01.11.2022",
-                            TripDetailId = 2
-                        },
-                        new
-                        {
-                            Id = 7,
-                            ArrivalTime = "21:30",
-                            DepartureTime = "15:20",
-                            FareAmount = 110m,
-                            MidLineId = 7,
-                            ScheduleDate = "01.11.2022",
-                            TripDetailId = 2
-                        },
-                        new
-                        {
-                            Id = 8,
-                            ArrivalTime = "21:30",
-                            DepartureTime = "15:20",
-                            FareAmount = 60m,
-                            MidLineId = 8,
-                            ScheduleDate = "01.11.2022",
-                            TripDetailId = 2
-                        },
-                        new
-                        {
-                            Id = 9,
-                            ArrivalTime = "21:30",
-                            DepartureTime = "15:20",
-                            FareAmount = 90m,
-                            MidLineId = 9,
-                            ScheduleDate = "01.11.2022",
-                            TripDetailId = 2
-                        },
-                        new
-                        {
-                            Id = 10,
-                            ArrivalTime = "21:30",
-                            DepartureTime = "15:20",
-                            FareAmount = 40m,
-                            MidLineId = 10,
-                            ScheduleDate = "01.11.2022",
-                            TripDetailId = 3
-                        },
-                        new
-                        {
-                            Id = 11,
-                            ArrivalTime = "21:30",
-                            DepartureTime = "15:20",
-                            FareAmount = 75m,
-                            MidLineId = 11,
-                            ScheduleDate = "01.11.2022",
-                            TripDetailId = 3
-                        },
-                        new
-                        {
-                            Id = 12,
-                            ArrivalTime = "21:30",
-                            DepartureTime = "15:20",
-                            FareAmount = 115m,
-                            MidLineId = 12,
-                            ScheduleDate = "01.11.2022",
-                            TripDetailId = 3
-                        },
-                        new
-                        {
-                            Id = 13,
-                            ArrivalTime = "21:30",
-                            DepartureTime = "15:20",
-                            FareAmount = 120m,
-                            MidLineId = 13,
-                            ScheduleDate = "01.11.2022",
-                            TripDetailId = 3
-                        },
-                        new
-                        {
-                            Id = 14,
-                            ArrivalTime = "21:30",
-                            DepartureTime = "15:20",
-                            FareAmount = 60m,
-                            MidLineId = 14,
-                            ScheduleDate = "01.11.2022",
-                            TripDetailId = 3
-                        });
                 });
 
             modelBuilder.Entity("BusTicket.Entity.TripDetail", b =>
@@ -626,26 +249,6 @@ namespace BusTicket.Data.Migrations
                     b.HasIndex("DriverId");
 
                     b.ToTable("TripDetails");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            BusId = 1,
-                            DriverId = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            BusId = 1,
-                            DriverId = 1
-                        },
-                        new
-                        {
-                            Id = 3,
-                            BusId = 1,
-                            DriverId = 1
-                        });
                 });
 
             modelBuilder.Entity("BusTicket.Entity.MidLine", b =>

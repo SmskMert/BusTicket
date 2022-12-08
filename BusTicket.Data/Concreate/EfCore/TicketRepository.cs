@@ -44,6 +44,16 @@ namespace BusTicket.Data.Concreate.EfCore
                 .Include(e => e.Trip.TripDetail)
                 .ToListAsync();
         }
+        public async Task<List<Ticket>> GetTicketsByUserNameAsync(string userName)
+        {
+            return await Context.Tickets
+                .Where(e => e.UserName == userName)
+                 .Include(e => e.Trip)
+                .ThenInclude(e => e.MidLine)
+                .ThenInclude(e => e.Line)
+                .Include(e => e.Trip.TripDetail)
+                .ToListAsync();
+        }
 
         public async Task<List<Ticket>> GetTicketsByPnrAsync(string pnr)
         {

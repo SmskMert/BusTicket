@@ -212,14 +212,21 @@ namespace BusTicket.Web.Controllers
                     await _customerService.UpdateAsync(savedCustomerDetails);
                 }
             }
-            else if (customer.FName == savedCustomerDetails.FName &&
+            else if (savedCustomerDetails != null)
+            {
+                if (customer.FName == savedCustomerDetails.FName &&
                     customer.LName == savedCustomerDetails.LName &&
                     customer.Gender == savedCustomerDetails.Gender &&
                     customer.Contact == savedCustomerDetails.Contact &&
                     customer.Email == savedCustomerDetails.Email &&
                     customer.Age == savedCustomerDetails.Age)
-            {
-                customer.Id = savedCustomerDetails.Id;
+                {
+                    customer.Id = savedCustomerDetails.Id;
+                }
+                else
+                {
+                    await _customerService.CreateAsync(customer);
+                }
             }
             else
             {
@@ -341,12 +348,15 @@ namespace BusTicket.Web.Controllers
                     CustomerId = customer.Id,
                     PnrNo = pnrForTickets
                 };
+                if (User.IsInRole("Customer"))
+                {
+                    ticket.UserName = User.Identity.Name;
+                }
                 await _ticketService.CreateAsync(ticket);
                 ticket = await _ticketService.GetTicketWithTrip(ticket.Id);
                 if (ticket == null) return NotFound();
                 displayTicket.Tickets.Add(ticket);
             }
-
 
             return View(displayTicket);
         }
@@ -355,8 +365,7 @@ namespace BusTicket.Web.Controllers
         public async Task<IActionResult> DisplayUserTickets()
         {
             var userName = User.Identity.Name;
-            var usersCustomerId = await _customerService.GetCustomerByUserNameAsync(userName);
-            var usersTickets = await _ticketService.GetTicketsByCustomerIdAsync(usersCustomerId.Id);
+            var usersTickets = await _ticketService.GetTicketsByUserNameAsync(userName);
 
             var pnrNos = new List<string>();
             usersTickets.ForEach(ticket =>

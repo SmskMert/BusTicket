@@ -18,6 +18,7 @@ namespace BusTicket.Entity
         public int CustomerId { get; set; } //FK
         public Customer? Customer { get; set; } //NavProp
 
+        public string? UserName { get; set; }
 
     }
 }
