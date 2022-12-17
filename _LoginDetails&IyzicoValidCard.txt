@@ -12,3 +12,7 @@ Password: Qwe123.
 Role: Admin
 
 Iyzico Valid Card No : 4603450000000000 DenizBank Visa(Credit)
+
+Example Trips
+09.12.22
+Samsun->Trabzon->Rize->Hopa->Batum->Tiflis
